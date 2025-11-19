@@ -3,6 +3,7 @@ members = [
     "waypaper_engine_daemon",
     "waypaper_engine_shared",
     "waypaper_engine_ui/src-tauri",
-    "waypaper_engine_cli"
+    "waypaper_engine_cli",
+    "waypaper_engine_ui_angular/src-tauri"
 ]
 resolver = "2"

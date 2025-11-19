@@ -1,0 +1,30 @@
+<div>
+    <select class="screen-selector" [(ngModel)]="selectedScreen" (change)="onScreenChange()">
+        <option *ngFor="let screen of screens" [value]="screen">{{ screen }}</option>
+    </select>
+
+    <input class="search-input" [(ngModel)]="search" (input)="onSearchChange()" />
+
+    <button class="stop-daemon-btn" (click)="stopDaemon()">Stop Daemon</button>
+
+    <div class="wp-grid">
+        <div
+                class="wallpaper"
+                *ngFor="let wp of wallpapers"
+                [id]="wp.id"
+                [style.backgroundImage]="'url(' + wp.preview_b64 + ')'"
+                (click)="onWallpaperClick(wp.id)"
+        >
+            <h2>{{ wp.title }}</h2>
+        </div>
+    </div>
+
+    <button id="theme-tab" (click)="toggleThemePanel()">Themes</button>
+    <div id="theme-panel" [style.display]="themePanelVisible ? 'block' : 'none'">
+        <select id="theme-select" [(ngModel)]="theme" (change)="onThemeChange()">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <!-- Add more themes as needed -->
+        </select>
+    </div>
+</div>
