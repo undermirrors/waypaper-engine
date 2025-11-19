@@ -54,9 +54,23 @@ window.addEventListener("DOMContentLoaded", async () => {
     search_input.addEventListener("input", async (event) => {
         await invoke("apply_filter", {search: event.target.value});
     });
-    
+
     stop_daemon_btn.addEventListener("click", async (event) => {
         await invoke("stop_daemon", {});
+    });
+
+    const themeTab = document.getElementById('theme-tab');
+    const themePanel = document.getElementById('theme-panel');
+    const themeSelect = document.getElementById('theme-select');
+
+    themeTab.addEventListener('click', () => {
+        themePanel.style.display = themePanel.style.display === 'none' ? 'block' : 'none';
+    });
+
+    themeSelect.addEventListener('change', () => {
+        document.documentElement.className = themeSelect.value;
+        localStorage.setItem('theme', themeSelect.value); // Save theme
+        themePanel.style.display = 'none';
     });
 
     await invoke("loaded", {});

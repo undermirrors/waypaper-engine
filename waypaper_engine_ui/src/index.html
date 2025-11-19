@@ -3,7 +3,17 @@
 
 <head>
     <meta charset="UTF-8"/>
+    <script>
+        (function () {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme) document.documentElement.className = theme;
+            } catch (e) {
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="themes.css"/>
     <link rel="stylesheet" href="assets/fontawesome/css/solid.css"/>
     <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -14,10 +24,33 @@
 
 <body>
 <nav>
-    <div class="nav-upper-bar">
+    <div class="nav-buttons">
         <button>Settings</button>
-        <select class="screen-selector"></select>
         <button class="stop-daemon-btn">Stop daemon</button>
+        <label>
+            <select class="screen-selector"></select>
+        </label>
+        <div id="theme-tab">Theme</div>
+        <div id="theme-panel">
+            <label>
+                <select id="theme-select">
+                    <option value="">Default</option>
+                    <option value="dark-theme">Dark</option>
+                    <option value="theme-blue">Blue</option>
+                    <option value="theme-green">Green</option>
+                    <option value="theme-purple">Purple</option>
+                    <option value="theme-orange">Orange</option>
+                    <option value="theme-pink">Pink</option>
+                    <option value="theme-gray">Gray</option>
+                    <option value="theme-red">Red</option>
+                    <option value="theme-teal">Teal</option>
+                    <option value="theme-yellow">Yellow</option>
+                    <option value="theme-aqua">Aqua</option>
+                    <option value="theme-brown">Brown</option>
+                    <option value="theme-indigo">Indigo</option>
+                </select>
+            </label>
+        </div>
     </div>
     <div class="nav">
         <ul>
@@ -34,7 +67,9 @@
 </nav>
 <main>
     <div class="main-upper-bar">
-        <input class="search-input" type="text" placeholder="Search">
+        <label>
+            <input class="search-input" type="text" placeholder="Search">
+        </label>
     </div>
     <div class="wp-grid">
     </div>

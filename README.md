@@ -81,7 +81,12 @@ cargo run --bin waypaper_engine_daemon --release
 
 To start the UI, run:
 ```bash
-cargo run --bin waypaper_engine_ui --release
+WEBKIT_DISABLE_DMABUF_RENDERER=1 cargo run --bin waypaper_engine_ui --release
+```
+
+To start the UI made with angular, run:
+```bash
+WEBKIT_DISABLE_DMABUF_RENDERER=1 npx tauri dev    
 ```
 
 >**Important:** Always start the daemon **before** launching the UI.
