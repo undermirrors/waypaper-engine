@@ -47,7 +47,7 @@
                     [class.active]="currentTheme?.id === t.id"
                     (click)="selectTheme(t)"
                     [title]="t.name">
-                    <div class="theme-preview" [style.background]="t.preview"></div>
+                    <div class="theme-preview" [ngClass]="'theme-preview-' + t.id"></div>
                     <span>{{ t.name }}</span>
                 </div>
             </div>
