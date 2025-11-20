@@ -1,65 +1,155 @@
-<nav>
-    <div class="nav-buttons">
-        <button>Settings</button>
-        <button class="stop-daemon-btn" (click)="stopDaemon()">Stop daemon</button>
-        <label>
-            <select class="screen-selector" [(ngModel)]="selectedScreen" (change)="onScreenChange()">
-                <option *ngFor="let screen of screens" [value]="screen">{{ screen }}</option>
-            </select>
-        </label>
-        <div id="theme-tab" (click)="toggleThemePanel()">Theme</div>
-        <div id="theme-panel" [style.display]="themePanelVisible ? 'block' : 'none'">
-            <label>
-                <select id="theme-select" [(ngModel)]="theme" (change)="onThemeChange()">
-                    <option value="">Default</option>
-                    <option value="dark-theme">Dark</option>
-                    <option value="theme-blue">Blue</option>
-                    <option value="theme-green">Green</option>
-                    <option value="theme-purple">Purple</option>
-                    <option value="theme-orange">Orange</option>
-                    <option value="theme-pink">Pink</option>
-                    <option value="theme-gray">Gray</option>
-                    <option value="theme-red">Red</option>
-                    <option value="theme-teal">Teal</option>
-                    <option value="theme-yellow">Yellow</option>
-                    <option value="theme-aqua">Aqua</option>
-                    <option value="theme-brown">Brown</option>
-                    <option value="theme-indigo">Indigo</option>
-                </select>
-            </label>
+<div class="app-container">
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="app-logo">
+                <i class="fa-solid fa-image"></i>
+                <span>Waypaper</span>
+            </div>
         </div>
-    </div>
-    <div class="nav">
-        <ul>
-            <li class="selected">
-                <i class="fa-solid fa-download"></i>
-                Installed
-            </li>
-            <li>
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Discover
-            </li>
-        </ul>
-    </div>
-</nav>
-<main>
-    <div class="main-upper-bar">
-        <label>
-            <input class="search-input" type="text" placeholder="Search" [(ngModel)]="search" (input)="onSearchChange()" />
-        </label>
-    </div>
-    <div class="wp-grid">
-        <div
-                class="wallpaper"
+
+        <div class="nav-section">
+            <h3 class="section-title">Navigation</h3>
+            <ul class="nav-menu">
+                <li class="nav-item selected">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Installé</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fa-solid fa-compass"></i>
+                    <span>Découvrir</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Favoris</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <h3 class="section-title">Affichage</h3>
+            <div class="control-group">
+                <label class="control-label">
+                    <i class="fa-solid fa-display"></i>
+                    Écran
+                </label>
+                <select class="modern-select" [(ngModel)]="selectedScreen" (change)="onScreenChange()">
+                    <option *ngFor="let screen of screens" [value]="screen">{{ screen }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="nav-section theme-section">
+            <h3 class="section-title">Thème</h3>
+            <div class="theme-grid">
+                <div
+                    class="theme-card"
+                    [class.active]="theme === ''"
+                    (click)="selectTheme('')"
+                    title="Default Light">
+                    <div class="theme-preview theme-preview-default"></div>
+                    <span>Light</span>
+                </div>
+                <div
+                    class="theme-card"
+                    [class.active]="theme === 'dark-theme'"
+                    (click)="selectTheme('dark-theme')"
+                    title="Dark">
+                    <div class="theme-preview theme-preview-dark"></div>
+                    <span>Dark</span>
+                </div>
+                <div
+                    class="theme-card"
+                    [class.active]="theme === 'theme-nord'"
+                    (click)="selectTheme('theme-nord')"
+                    title="Nord">
+                    <div class="theme-preview theme-preview-nord"></div>
+                    <span>Nord</span>
+                </div>
+                <div
+                    class="theme-card"
+                    [class.active]="theme === 'theme-dracula'"
+                    (click)="selectTheme('theme-dracula')"
+                    title="Dracula">
+                    <div class="theme-preview theme-preview-dracula"></div>
+                    <span>Dracula</span>
+                </div>
+                <div
+                    class="theme-card"
+                    [class.active]="theme === 'theme-monokai'"
+                    (click)="selectTheme('theme-monokai')"
+                    title="Monokai">
+                    <div class="theme-preview theme-preview-monokai"></div>
+                    <span>Monokai</span>
+                </div>
+                <div
+                    class="theme-card"
+                    [class.active]="theme === 'theme-gruvbox'"
+                    (click)="selectTheme('theme-gruvbox')"
+                    title="Gruvbox">
+                    <div class="theme-preview theme-preview-gruvbox"></div>
+                    <span>Gruvbox</span>
+                </div>
+                <div
+                    class="theme-card"
+                    [class.active]="theme === 'theme-catppuccin'"
+                    (click)="selectTheme('theme-catppuccin')"
+                    title="Catppuccin">
+                    <div class="theme-preview theme-preview-catppuccin"></div>
+                    <span>Catppuccin</span>
+                </div>
+                <div
+                    class="theme-card"
+                    [class.active]="theme === 'theme-ocean'"
+                    (click)="selectTheme('theme-ocean')"
+                    title="Ocean">
+                    <div class="theme-preview theme-preview-ocean"></div>
+                    <span>Ocean</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <button class="footer-btn" title="Paramètres">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+            <button class="footer-btn danger" (click)="stopDaemon()" title="Arrêter le daemon">
+                <i class="fa-solid fa-power-off"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="main-header">
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input
+                    class="search-input"
+                    type="text"
+                    placeholder="Rechercher un fond d'écran..."
+                    [(ngModel)]="search"
+                    (input)="onSearchChange()" />
+            </div>
+            <div class="header-info">
+                <span class="wallpaper-count">{{ wallpapers.length }} fond(s) d'écran</span>
+            </div>
+        </div>
+
+        <div class="wallpaper-grid">
+            <div
+                class="wallpaper-card"
                 *ngFor="let wp of wallpapers"
                 [id]="wp.id"
-                [style.backgroundImage]="'url(' + wp.preview_b64 + ')'"
-                (click)="onWallpaperClick(wp.id)"
-        >
-            <h2>{{ wp.title }}</h2>
+                (click)="onWallpaperClick(wp.id)">
+                <div class="wallpaper-preview" [style.backgroundImage]="'url(' + wp.preview_b64 + ')'">
+                    <div class="wallpaper-overlay">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </div>
+                <div class="wallpaper-info">
+                    <h3 class="wallpaper-title">{{ wp.title }}</h3>
+                </div>
+            </div>
         </div>
-    </div>
-</main>
-<aside>
-</aside>
+    </main>
+</div>
 

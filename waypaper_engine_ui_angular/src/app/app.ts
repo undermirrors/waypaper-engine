@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   search: string = '';
   theme: string = '';
   themePanelVisible = false;
+
   constructor(
     private ngZone: NgZone,
     private cdr: ChangeDetectorRef
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     this.theme = localStorage.getItem('theme') || '';
+    document.documentElement.className = this.theme;
     try {
       console.log('[APP] Calling get_screens...');
       this.screens = await invoke<string[]>('get_screens', {});
@@ -90,13 +92,9 @@ export class AppComponent implements OnInit {
     }
   }
 
-  toggleThemePanel() {
-    this.themePanelVisible = !this.themePanelVisible;
-  }
-
-  onThemeChange() {
-    document.documentElement.className = this.theme;
-    localStorage.setItem('theme', this.theme);
-    this.themePanelVisible = false;
+  selectTheme(themeName: string) {
+    this.theme = themeName;
+    document.documentElement.className = themeName;
+    localStorage.setItem('theme', themeName);
   }
 }

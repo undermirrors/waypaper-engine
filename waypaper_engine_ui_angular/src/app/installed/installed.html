@@ -1,0 +1,34 @@
+<div class="installed-page">
+  <div class="main-header">
+    <div class="search-container">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input
+        class="search-input"
+        type="text"
+        placeholder="Rechercher un fond d'écran..."
+        [(ngModel)]="search"
+        (input)="onSearchChange()" />
+    </div>
+    <div class="header-info">
+      <span class="wallpaper-count">{{ wallpapers.length }} fond(s) d'écran</span>
+    </div>
+  </div>
+
+  <div class="wallpaper-grid">
+    <div
+      class="wallpaper-card"
+      *ngFor="let wp of wallpapers"
+      [id]="wp.id"
+      (click)="onWallpaperClick(wp.id)">
+      <div class="wallpaper-preview" [style.backgroundImage]="'url(' + wp.preview_b64 + ')'">
+        <div class="wallpaper-overlay">
+          <i class="fa-solid fa-play"></i>
+        </div>
+      </div>
+      <div class="wallpaper-info">
+        <h3 class="wallpaper-title">{{ wp.title }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+

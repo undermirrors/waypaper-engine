@@ -1,3 +1,102 @@
-/* Styles spécifiques au composant app-root */
-/* Les styles globaux sont dans src/styles.css */
+.nav-item {
+    position: relative;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: var(--nav-selected);
+    border-radius: 0 3px 3px 0;
+    transition: height 0.2s ease;
+}
+
+.nav-item.selected::before {
+    height: 60%;
+}
+
+/* Style pour les boutons au survol */
+.footer-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.footer-btn:active::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* Animation pour le compteur de wallpapers */
+.wallpaper-count {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Effet de focus pour l'input de recherche */
+.search-input:focus + .search-icon {
+    color: var(--nav-selected);
+}
+
+/* Responsive design pour petits écrans */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 280px;
+    }
+
+    .theme-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wallpaper-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 240px;
+    }
+
+    .app-logo span {
+        display: none;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+    .nav-item {
+        justify-content: center;
+    }
+}
+
 
