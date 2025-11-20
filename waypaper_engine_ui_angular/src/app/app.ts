@@ -11,48 +11,78 @@ declare global {
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
+  styleUrls: ['./app.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule],
-  styleUrls: ['./app.component.css']
+  imports: [FormsModule, CommonModule]
 })
 export class AppComponent implements OnInit {
   screens: string[] = [];
   selectedScreen: string = '';
   wallpapers: any[] = [];
   search: string = '';
-  theme: string = localStorage.getItem('theme') || 'light';
+  theme: string = '';
   themePanelVisible = false;
 
   async ngOnInit() {
+    // Initialiser le theme depuis localStorage
+    this.theme = localStorage.getItem('theme') || '';
+
     const tauri = window.__TAURI__;
-    if (!tauri?.invoke || !tauri?.event?.listen) return;
+    if (!tauri?.invoke || !tauri?.event?.listen) {
+      console.error('Tauri API not available');
+      return;
+    }
 
-    this.screens = await tauri.invoke('get_screens', {});
-    if (this.screens.length) this.selectedScreen = this.screens[0];
+    try {
+      this.screens = await tauri.invoke('get_screens', {});
+      console.log('Screens loaded:', this.screens);
+      if (this.screens.length) this.selectedScreen = this.screens[0];
 
-    tauri.event.listen('setWPs', (e: any) => {
-      this.wallpapers = e.payload;
-    });
+      tauri.event.listen('setWPs', (e: any) => {
+        console.log('Received wallpapers:', e.payload);
+        this.wallpapers = e.payload;
+      });
 
-    await tauri.invoke('loaded', {});
+      await tauri.invoke('loaded', {});
+      console.log('Loaded command sent');
+    } catch (error) {
+      console.error('Error during initialization:', error);
+    }
   }
 
   onScreenChange() {
   }
 
-  async onWallpaperClick(wpId: string) {
-    await window.__TAURI__.invoke('set_wp', {
-      wpId,
-      screen: this.selectedScreen
-    });
+  async onWallpaperClick(wpId: number) {
+    try {
+      console.log('Setting wallpaper:', wpId, 'on screen:', this.selectedScreen);
+      await window.__TAURI__.invoke('set_wp', {
+        wpId,
+        screen: this.selectedScreen
+      });
+      console.log('Wallpaper set successfully');
+    } catch (error) {
+      console.error('Error setting wallpaper:', error);
+    }
   }
 
   async onSearchChange() {
-    await window.__TAURI__.invoke('apply_filter', { search: this.search });
+    try {
+      console.log('Applying filter:', this.search);
+      await window.__TAURI__.invoke('apply_filter', { search: this.search });
+    } catch (error) {
+      console.error('Error applying filter:', error);
+    }
   }
 
   async stopDaemon() {
-    await window.__TAURI__.invoke('stop_daemon', {});
+    try {
+      console.log('Stopping daemon...');
+      await window.__TAURI__.invoke('stop_daemon', {});
+      console.log('Daemon stopped');
+    } catch (error) {
+      console.error('Error stopping daemon:', error);
+    }
   }
 
   toggleThemePanel() {

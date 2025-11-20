@@ -17,9 +17,16 @@ body {
     background: var(--background);
     color: var(--text);
     height: 100vh;
+    overflow: hidden;
+}
+
+/* app-root doit prendre toute la hauteur et afficher le flex layout */
+app-root {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    height: 100vh;
+    width: 100%;
     overflow-y: hidden;
 }
 
@@ -29,6 +36,8 @@ nav, aside {
 
 nav {
     width: 15%;
+    display: flex;
+    flex-direction: column;
 }
 
 aside {
@@ -37,6 +46,14 @@ aside {
 
 main {
     width: 65%;
+    background: var(--main-bg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main-upper-bar {
+    padding: 20px;
     background: var(--main-bg);
 }
 
@@ -53,15 +70,31 @@ main {
     outline: none;
 }
 
+.nav ul {
+    list-style: none;
+    padding: 0 24px;
+    margin: 24px 0;
+}
+
 .nav ul li {
     color: var(--nav-text);
     font-size: 25px;
     font-weight: bold;
     margin: 0 0 40px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav ul li:hover {
+    color: var(--nav-selected);
 }
 
 .nav ul li.selected {
-    color: #FFFFFF;
+    color: var(--nav-selected);
+}
+
+.nav ul li i {
+    margin-right: 12px;
 }
 
 .wp-grid {
@@ -85,6 +118,7 @@ main {
     background-position: center;
     border-radius: 10px;
     transition: filter 0.1s, transform 0.1s;
+    cursor: pointer;
 }
 
 .wallpaper h2 {
@@ -94,13 +128,15 @@ main {
     color: #EDEDED;
     font-size: 14px;
     margin: 0;
-    cursor: default;
+    cursor: pointer;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .wallpaper:hover {
     transform: scale(1.07);
     filter: brightness(1.2) contrast(1.2);
     transition: filter 0.1s, transform 0.1s;
+    cursor: pointer;
 }
 
 .nav-buttons {
@@ -122,6 +158,30 @@ main {
     background: #fff;
     color: #222;
     margin: 0;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-buttons button:hover,
+.nav-buttons select:hover {
+    background: #f5f5f5;
+    border-color: #999;
+}
+
+.nav-buttons button:active {
+    background: #e0e0e0;
+}
+
+.nav-buttons select {
+    cursor: pointer;
+}
+
+.nav-buttons label {
+    width: 100%;
+}
+
+.nav-buttons label select {
+    width: 100%;
 }
 
 #theme-tab {
@@ -135,6 +195,14 @@ main {
     cursor: pointer;
     transition: box-shadow 0.2s, background 0.2s;
     margin-top: 8px;
+    text-align: center;
+    border: none;
+    font-weight: 500;
+}
+
+#theme-tab:hover {
+    box-shadow: 0 6px 24px #0004;
+    background: rgba(255,255,255,1);
 }
 
 #theme-panel {
@@ -145,3 +213,26 @@ main {
     box-shadow: 0 8px 32px #0004;
     margin-top: 8px;
 }
+
+#theme-panel label {
+    display: block;
+    width: 100%;
+}
+
+#theme-panel select {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #222;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+#theme-panel select:hover {
+    background: #f5f5f5;
+    border-color: #999;
+}
+

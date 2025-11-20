@@ -1,12 +1,53 @@
-<div>
-    <select class="screen-selector" [(ngModel)]="selectedScreen" (change)="onScreenChange()">
-        <option *ngFor="let screen of screens" [value]="screen">{{ screen }}</option>
-    </select>
-
-    <input class="search-input" [(ngModel)]="search" (input)="onSearchChange()" />
-
-    <button class="stop-daemon-btn" (click)="stopDaemon()">Stop Daemon</button>
-
+<nav>
+    <div class="nav-buttons">
+        <button>Settings</button>
+        <button class="stop-daemon-btn" (click)="stopDaemon()">Stop daemon</button>
+        <label>
+            <select class="screen-selector" [(ngModel)]="selectedScreen" (change)="onScreenChange()">
+                <option *ngFor="let screen of screens" [value]="screen">{{ screen }}</option>
+            </select>
+        </label>
+        <div id="theme-tab" (click)="toggleThemePanel()">Theme</div>
+        <div id="theme-panel" [style.display]="themePanelVisible ? 'block' : 'none'">
+            <label>
+                <select id="theme-select" [(ngModel)]="theme" (change)="onThemeChange()">
+                    <option value="">Default</option>
+                    <option value="dark-theme">Dark</option>
+                    <option value="theme-blue">Blue</option>
+                    <option value="theme-green">Green</option>
+                    <option value="theme-purple">Purple</option>
+                    <option value="theme-orange">Orange</option>
+                    <option value="theme-pink">Pink</option>
+                    <option value="theme-gray">Gray</option>
+                    <option value="theme-red">Red</option>
+                    <option value="theme-teal">Teal</option>
+                    <option value="theme-yellow">Yellow</option>
+                    <option value="theme-aqua">Aqua</option>
+                    <option value="theme-brown">Brown</option>
+                    <option value="theme-indigo">Indigo</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li class="selected">
+                <i class="fa-solid fa-download"></i>
+                Installed
+            </li>
+            <li>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Discover
+            </li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div class="main-upper-bar">
+        <label>
+            <input class="search-input" type="text" placeholder="Search" [(ngModel)]="search" (input)="onSearchChange()" />
+        </label>
+    </div>
     <div class="wp-grid">
         <div
                 class="wallpaper"
@@ -18,13 +59,7 @@
             <h2>{{ wp.title }}</h2>
         </div>
     </div>
+</main>
+<aside>
+</aside>
 
-    <button id="theme-tab" (click)="toggleThemePanel()">Themes</button>
-    <div id="theme-panel" [style.display]="themePanelVisible ? 'block' : 'none'">
-        <select id="theme-select" [(ngModel)]="theme" (change)="onThemeChange()">
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <!-- Add more themes as needed -->
-        </select>
-    </div>
-</div>
