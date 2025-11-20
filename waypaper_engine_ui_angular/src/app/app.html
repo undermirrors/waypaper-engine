@@ -43,67 +43,12 @@
             <div class="theme-grid">
                 <div
                     class="theme-card"
-                    [class.active]="theme === ''"
-                    (click)="selectTheme('')"
-                    title="Default Light">
-                    <div class="theme-preview theme-preview-default"></div>
-                    <span>Light</span>
-                </div>
-                <div
-                    class="theme-card"
-                    [class.active]="theme === 'dark-theme'"
-                    (click)="selectTheme('dark-theme')"
-                    title="Dark">
-                    <div class="theme-preview theme-preview-dark"></div>
-                    <span>Dark</span>
-                </div>
-                <div
-                    class="theme-card"
-                    [class.active]="theme === 'theme-nord'"
-                    (click)="selectTheme('theme-nord')"
-                    title="Nord">
-                    <div class="theme-preview theme-preview-nord"></div>
-                    <span>Nord</span>
-                </div>
-                <div
-                    class="theme-card"
-                    [class.active]="theme === 'theme-dracula'"
-                    (click)="selectTheme('theme-dracula')"
-                    title="Dracula">
-                    <div class="theme-preview theme-preview-dracula"></div>
-                    <span>Dracula</span>
-                </div>
-                <div
-                    class="theme-card"
-                    [class.active]="theme === 'theme-monokai'"
-                    (click)="selectTheme('theme-monokai')"
-                    title="Monokai">
-                    <div class="theme-preview theme-preview-monokai"></div>
-                    <span>Monokai</span>
-                </div>
-                <div
-                    class="theme-card"
-                    [class.active]="theme === 'theme-gruvbox'"
-                    (click)="selectTheme('theme-gruvbox')"
-                    title="Gruvbox">
-                    <div class="theme-preview theme-preview-gruvbox"></div>
-                    <span>Gruvbox</span>
-                </div>
-                <div
-                    class="theme-card"
-                    [class.active]="theme === 'theme-catppuccin'"
-                    (click)="selectTheme('theme-catppuccin')"
-                    title="Catppuccin">
-                    <div class="theme-preview theme-preview-catppuccin"></div>
-                    <span>Catppuccin</span>
-                </div>
-                <div
-                    class="theme-card"
-                    [class.active]="theme === 'theme-ocean'"
-                    (click)="selectTheme('theme-ocean')"
-                    title="Ocean">
-                    <div class="theme-preview theme-preview-ocean"></div>
-                    <span>Ocean</span>
+                    *ngFor="let t of themes"
+                    [class.active]="currentTheme?.id === t.id"
+                    (click)="selectTheme(t)"
+                    [title]="t.name">
+                    <div class="theme-preview" [style.background]="t.preview"></div>
+                    <span>{{ t.name }}</span>
                 </div>
             </div>
         </div>

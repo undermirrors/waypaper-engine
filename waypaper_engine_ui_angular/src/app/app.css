@@ -19,7 +19,6 @@
     height: 60%;
 }
 
-/* Style pour les boutons au survol */
 .footer-btn {
     position: relative;
     overflow: hidden;
@@ -43,7 +42,6 @@
     height: 200px;
 }
 
-/* Animation pour le compteur de wallpapers */
 .wallpaper-count {
     animation: slideIn 0.3s ease;
 }
@@ -59,12 +57,10 @@
     }
 }
 
-/* Effet de focus pour l'input de recherche */
 .search-input:focus + .search-icon {
     color: var(--nav-selected);
 }
 
-/* Responsive design pour petits écrans */
 @media (max-width: 1200px) {
     .sidebar {
         width: 280px;
@@ -98,5 +94,4 @@
         justify-content: center;
     }
 }
-
 

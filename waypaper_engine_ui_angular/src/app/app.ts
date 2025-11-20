@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { invoke } from '@tauri-apps/api/core';
 import { listen } from '@tauri-apps/api/event';
+import { ThemeService, Theme } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -17,17 +18,24 @@ export class AppComponent implements OnInit {
   selectedScreen: string = '';
   wallpapers: any[] = [];
   search: string = '';
-  theme: string = '';
+  themes: Theme[] = [];
+  currentTheme: Theme | undefined;
   themePanelVisible = false;
 
   constructor(
     private ngZone: NgZone,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private themeService: ThemeService
   ) {}
 
   async ngOnInit() {
-    this.theme = localStorage.getItem('theme') || '';
-    document.documentElement.className = this.theme;
+    // Charger les thèmes disponibles
+    this.themes = this.themeService.getThemes();
+    this.currentTheme = this.themeService.getCurrentTheme();
+    if (this.currentTheme) {
+      this.themeService.applyTheme(this.currentTheme);
+    }
+
     try {
       console.log('[APP] Calling get_screens...');
       this.screens = await invoke<string[]>('get_screens', {});
@@ -92,9 +100,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  selectTheme(themeName: string) {
-    this.theme = themeName;
-    document.documentElement.className = themeName;
-    localStorage.setItem('theme', themeName);
+  selectTheme(theme: Theme) {
+    this.currentTheme = theme;
+    this.themeService.applyTheme(theme);
   }
 }
