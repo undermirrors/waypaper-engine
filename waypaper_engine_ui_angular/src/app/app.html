@@ -47,7 +47,23 @@
                     [class.active]="currentTheme?.id === t.id"
                     (click)="selectTheme(t)"
                     [title]="t.name">
-                    <div class="theme-preview" [ngClass]="'theme-preview-' + t.id"></div>
+                    <div class="theme-preview" [ngClass]="'theme-preview-' + t.id">
+                        <div class="theme-preview-nav">
+                            <div class="preview-nav-item"></div>
+                            <div class="preview-nav-item"></div>
+                            <div class="preview-nav-item selected"></div>
+                        </div>
+                        <div class="theme-preview-card">
+                            <div class="preview-card-header"></div>
+                            <div class="preview-card-content"></div>
+                        </div>
+                        <div class="theme-preview-border"></div>
+                        <div class="theme-preview-indicators">
+                            <div class="preview-indicator success"></div>
+                            <div class="preview-indicator danger"></div>
+                            <div class="preview-indicator accent"></div>
+                        </div>
+                    </div>
                     <span>{{ t.name }}</span>
                 </div>
             </div>
