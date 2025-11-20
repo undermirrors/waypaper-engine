@@ -1,0 +1,68 @@
+<div class="themes-page">
+  <div class="themes-header">
+    <div class="header-content">
+      <h1 class="page-title">
+        <i class="fa-solid fa-palette"></i>
+        Personnalisation des thèmes
+      </h1>
+      <p class="page-description">
+        Choisissez le thème qui correspond à votre style et à votre environnement de travail
+      </p>
+    </div>
+  </div>
+
+  <div class="themes-container">
+    <div class="themes-grid">
+      <div
+        *ngFor="let theme of themes"
+        class="theme-card-large"
+        [class.active]="isActive(theme.id)"
+        (click)="selectTheme(theme.id)">
+
+        <div class="theme-preview-large">
+          <div class="preview-sidebar" [style.backgroundColor]="theme.colors.secondary">
+            <div class="preview-nav-item" [style.backgroundColor]="theme.colors.primary"></div>
+            <div class="preview-nav-item inactive"></div>
+            <div class="preview-nav-item inactive"></div>
+          </div>
+          <div class="preview-content" [style.backgroundColor]="theme.colors.background">
+            <div class="preview-header" [style.backgroundColor]="theme.colors.secondary"></div>
+            <div class="preview-cards">
+              <div class="preview-card" [style.backgroundColor]="theme.colors.secondary"></div>
+              <div class="preview-card" [style.backgroundColor]="theme.colors.secondary"></div>
+              <div class="preview-card" [style.backgroundColor]="theme.colors.secondary"></div>
+              <div class="preview-card" [style.backgroundColor]="theme.colors.secondary"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="theme-info">
+          <div class="theme-header">
+            <h3 class="theme-name">{{ theme.name }}</h3>
+            <div class="active-badge" *ngIf="isActive(theme.id)">
+              <i class="fa-solid fa-check"></i>
+              Actif
+            </div>
+          </div>
+          <p class="theme-description">{{ theme.description }}</p>
+
+          <div class="color-palette">
+            <div class="color-swatch" [style.backgroundColor]="theme.colors.primary" [title]="'Primaire: ' + theme.colors.primary"></div>
+            <div class="color-swatch" [style.backgroundColor]="theme.colors.secondary" [title]="'Secondaire: ' + theme.colors.secondary"></div>
+            <div class="color-swatch" [style.backgroundColor]="theme.colors.accent" [title]="'Accent: ' + theme.colors.accent"></div>
+            <div class="color-swatch" [style.backgroundColor]="theme.colors.background" [title]="'Fond: ' + theme.colors.background"></div>
+          </div>
+        </div>
+
+        <div class="card-overlay" *ngIf="!isActive(theme.id)">
+          <div class="apply-button">
+            <i class="fa-solid fa-brush"></i>
+            Appliquer ce thème
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

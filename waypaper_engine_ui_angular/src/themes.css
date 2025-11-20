@@ -144,3 +144,255 @@ html.theme-ocean {
     --success: #06ffa5;
     --accent: #48cae4;
 }
+
+/* ============ SOLARIZED LIGHT THEME ============ */
+html.theme-solarized-light {
+    --background: #fdf6e3;
+    --text: #657b83;
+    --sidebar-bg: #eee8d5;
+    --main-bg: #fdf6e3;
+    --input-bg: #eee8d5;
+    --input-border: #93a1a1;
+    --input-text: #657b83;
+    --nav-text: #839496;
+    --nav-selected: #268bd2;
+    --nav-hover: #eee8d5;
+    --card-bg: #eee8d5;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --overlay-bg: rgba(38, 139, 210, 0.9);
+    --border-color: #93a1a1;
+    --danger: #dc322f;
+    --success: #859900;
+    --accent: #2aa198;
+}
+
+/* ============ SOLARIZED DARK THEME ============ */
+html.theme-solarized-dark {
+    --background: #002b36;
+    --text: #839496;
+    --sidebar-bg: #073642;
+    --main-bg: #002b36;
+    --input-bg: #073642;
+    --input-border: #586e75;
+    --input-text: #839496;
+    --nav-text: #93a1a1;
+    --nav-selected: #268bd2;
+    --nav-hover: #073642;
+    --card-bg: #073642;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(38, 139, 210, 0.9);
+    --border-color: #586e75;
+    --danger: #dc322f;
+    --success: #859900;
+    --accent: #2aa198;
+}
+
+/* ============ TOKYO NIGHT THEME ============ */
+html.theme-tokyo-night {
+    --background: #1a1b26;
+    --text: #a9b1d6;
+    --sidebar-bg: #16161e;
+    --main-bg: #1a1b26;
+    --input-bg: #16161e;
+    --input-border: #414868;
+    --input-text: #a9b1d6;
+    --nav-text: #565f89;
+    --nav-selected: #7aa2f7;
+    --nav-hover: #24283b;
+    --card-bg: #24283b;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(122, 162, 247, 0.9);
+    --border-color: #414868;
+    --danger: #f7768e;
+    --success: #9ece6a;
+    --accent: #bb9af7;
+}
+
+/* ============ ONE DARK THEME ============ */
+html.theme-one-dark {
+    --background: #282c34;
+    --text: #abb2bf;
+    --sidebar-bg: #21252b;
+    --main-bg: #282c34;
+    --input-bg: #21252b;
+    --input-border: #3e4451;
+    --input-text: #abb2bf;
+    --nav-text: #5c6370;
+    --nav-selected: #61afef;
+    --nav-hover: #2c313c;
+    --card-bg: #2c313c;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(97, 175, 239, 0.9);
+    --border-color: #3e4451;
+    --danger: #e06c75;
+    --success: #98c379;
+    --accent: #56b6c2;
+}
+
+/* ============ MATERIAL THEME ============ */
+html.theme-material {
+    --background: #263238;
+    --text: #eeffff;
+    --sidebar-bg: #1e272c;
+    --main-bg: #263238;
+    --input-bg: #1e272c;
+    --input-border: #37474f;
+    --input-text: #eeffff;
+    --nav-text: #546e7a;
+    --nav-selected: #82aaff;
+    --nav-hover: #2e3c43;
+    --card-bg: #2e3c43;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(130, 170, 255, 0.9);
+    --border-color: #37474f;
+    --danger: #f07178;
+    --success: #c3e88d;
+    --accent: #89ddff;
+}
+
+/* ============ GITHUB DARK THEME ============ */
+html.theme-github-dark {
+    --background: #0d1117;
+    --text: #c9d1d9;
+    --sidebar-bg: #161b22;
+    --main-bg: #0d1117;
+    --input-bg: #161b22;
+    --input-border: #30363d;
+    --input-text: #c9d1d9;
+    --nav-text: #8b949e;
+    --nav-selected: #58a6ff;
+    --nav-hover: #21262d;
+    --card-bg: #161b22;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(88, 166, 255, 0.9);
+    --border-color: #30363d;
+    --danger: #f85149;
+    --success: #7ee787;
+    --accent: #79c0ff;
+}
+
+/* ============ AYU DARK THEME ============ */
+html.theme-ayu-dark {
+    --background: #0f1419;
+    --text: #bfbdb6;
+    --sidebar-bg: #0a0e14;
+    --main-bg: #0f1419;
+    --input-bg: #0a0e14;
+    --input-border: #1f2430;
+    --input-text: #bfbdb6;
+    --nav-text: #4d5566;
+    --nav-selected: #ffcc66;
+    --nav-hover: #13171d;
+    --card-bg: #13171d;
+    --card-shadow: rgba(0, 0, 0, 0.6);
+    --overlay-bg: rgba(255, 204, 102, 0.9);
+    --border-color: #1f2430;
+    --danger: #f07178;
+    --success: #b8cc52;
+    --accent: #39bae6;
+}
+
+/* ============ COBALT THEME ============ */
+html.theme-cobalt {
+    --background: #002240;
+    --text: #ffffff;
+    --sidebar-bg: #001628;
+    --main-bg: #002240;
+    --input-bg: #001628;
+    --input-border: #0050a0;
+    --input-text: #ffffff;
+    --nav-text: #80a0c0;
+    --nav-selected: #0088ff;
+    --nav-hover: #003060;
+    --card-bg: #003060;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(0, 136, 255, 0.9);
+    --border-color: #0050a0;
+    --danger: #ff3333;
+    --success: #3ad900;
+    --accent: #ff9d00;
+}
+
+/* ============ SYNTHWAVE THEME ============ */
+html.theme-synthwave {
+    --background: #262335;
+    --text: #f8f8f2;
+    --sidebar-bg: #1f1d2e;
+    --main-bg: #262335;
+    --input-bg: #1f1d2e;
+    --input-border: #493f74;
+    --input-text: #f8f8f2;
+    --nav-text: #a599e9;
+    --nav-selected: #ff7edb;
+    --nav-hover: #34294f;
+    --card-bg: #34294f;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(255, 126, 219, 0.9);
+    --border-color: #493f74;
+    --danger: #fe4450;
+    --success: #72f1b8;
+    --accent: #fede5d;
+}
+
+/* ============ EVERFOREST THEME ============ */
+html.theme-everforest {
+    --background: #2d353b;
+    --text: #d3c6aa;
+    --sidebar-bg: #272e33;
+    --main-bg: #2d353b;
+    --input-bg: #272e33;
+    --input-border: #414b50;
+    --input-text: #d3c6aa;
+    --nav-text: #859289;
+    --nav-selected: #a7c080;
+    --nav-hover: #343f44;
+    --card-bg: #343f44;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(167, 192, 128, 0.9);
+    --border-color: #414b50;
+    --danger: #e67e80;
+    --success: #83c092;
+    --accent: #7fbbb3;
+}
+
+/* ============ PALENIGHT THEME ============ */
+html.theme-palenight {
+    --background: #292d3e;
+    --text: #a6accd;
+    --sidebar-bg: #1f2233;
+    --main-bg: #292d3e;
+    --input-bg: #1f2233;
+    --input-border: #3e4451;
+    --input-text: #a6accd;
+    --nav-text: #676e95;
+    --nav-selected: #82aaff;
+    --nav-hover: #343a4f;
+    --card-bg: #343a4f;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(130, 170, 255, 0.9);
+    --border-color: #3e4451;
+    --danger: #f07178;
+    --success: #c3e88d;
+    --accent: #c792ea;
+}
+
+/* ============ HORIZON THEME ============ */
+html.theme-horizon {
+    --background: #1c1e26;
+    --text: #e3e6ee;
+    --sidebar-bg: #16181d;
+    --main-bg: #1c1e26;
+    --input-bg: #16181d;
+    --input-border: #2e303e;
+    --input-text: #e3e6ee;
+    --nav-text: #6c6f93;
+    --nav-selected: #fab795;
+    --nav-hover: #232530;
+    --card-bg: #232530;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(250, 183, 149, 0.9);
+    --border-color: #2e303e;
+    --danger: #f43e5c;
+    --success: #09f7a0;
+    --accent: #f09383;
+}
