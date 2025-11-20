@@ -1,12 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
-declare global {
-  interface Window {
-    __TAURI__: any;
-  }
-}
+import { invoke } from '@tauri-apps/api/core';
+import { listen } from '@tauri-apps/api/event';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +11,7 @@ declare global {
   standalone: true,
   imports: [FormsModule, CommonModule]
 })
+
 export class AppComponent implements OnInit {
   screens: string[] = [];
   selectedScreen: string = '';
@@ -22,66 +19,74 @@ export class AppComponent implements OnInit {
   search: string = '';
   theme: string = '';
   themePanelVisible = false;
+  constructor(
+    private ngZone: NgZone,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   async ngOnInit() {
-    // Initialiser le theme depuis localStorage
     this.theme = localStorage.getItem('theme') || '';
-
-    const tauri = window.__TAURI__;
-    if (!tauri?.invoke || !tauri?.event?.listen) {
-      console.error('Tauri API not available');
-      return;
-    }
-
     try {
-      this.screens = await tauri.invoke('get_screens', {});
-      console.log('Screens loaded:', this.screens);
-      if (this.screens.length) this.selectedScreen = this.screens[0];
-
-      tauri.event.listen('setWPs', (e: any) => {
-        console.log('Received wallpapers:', e.payload);
-        this.wallpapers = e.payload;
+      console.log('[APP] Calling get_screens...');
+      this.screens = await invoke<string[]>('get_screens', {});
+      console.log('[APP] Screens loaded:', this.screens);
+      if (this.screens.length) {
+        this.selectedScreen = this.screens[0];
+      }
+      this.cdr.detectChanges();
+      console.log('[APP] Setting up setWPs listener...');
+      await listen<any>('setWPs', (event) => {
+        this.ngZone.run(() => {
+          console.log('[APP] Received wallpapers:', event.payload);
+          this.wallpapers = event.payload;
+          this.cdr.detectChanges();
+        });
       });
-
-      await tauri.invoke('loaded', {});
-      console.log('Loaded command sent');
+      console.log('[APP] Calling loaded...');
+      await invoke('loaded', {});
+      console.log('[APP] Loaded command sent');
     } catch (error) {
-      console.error('Error during initialization:', error);
+      console.error('[APP] Error during initialization:', error);
     }
   }
 
   onScreenChange() {
+    console.log('[APP] Screen changed to:', this.selectedScreen);
   }
 
   async onWallpaperClick(wpId: number) {
+    console.log('[APP] Wallpaper clicked:', wpId);
     try {
-      console.log('Setting wallpaper:', wpId, 'on screen:', this.selectedScreen);
-      await window.__TAURI__.invoke('set_wp', {
+      console.log('[APP] Setting wallpaper:', wpId, 'on screen:', this.selectedScreen);
+      await invoke('set_wp', {
         wpId,
         screen: this.selectedScreen
       });
-      console.log('Wallpaper set successfully');
+      console.log('[APP] Wallpaper set successfully');
     } catch (error) {
-      console.error('Error setting wallpaper:', error);
+      console.error('[APP] Error setting wallpaper:', error);
     }
   }
 
   async onSearchChange() {
+    console.log('[APP] Search changed:', this.search);
     try {
-      console.log('Applying filter:', this.search);
-      await window.__TAURI__.invoke('apply_filter', { search: this.search });
+      console.log('[APP] Applying filter:', this.search);
+      await invoke('apply_filter', { search: this.search });
+      console.log('[APP] Filter applied successfully');
     } catch (error) {
-      console.error('Error applying filter:', error);
+      console.error('[APP] Error applying filter:', error);
     }
   }
 
   async stopDaemon() {
+    console.log('[APP] Stop daemon button clicked');
     try {
-      console.log('Stopping daemon...');
-      await window.__TAURI__.invoke('stop_daemon', {});
-      console.log('Daemon stopped');
+      console.log('[APP] Stopping daemon...');
+      await invoke('stop_daemon', {});
+      console.log('[APP] Daemon stopped');
     } catch (error) {
-      console.error('Error stopping daemon:', error);
+      console.error('[APP] Error stopping daemon:', error);
     }
   }
 
