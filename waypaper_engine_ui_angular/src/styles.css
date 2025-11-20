@@ -494,8 +494,8 @@ app-root {
 .theme-preview-theme-material .theme-preview-border { border-color: #37474f; }
 
 /* GITHUB DARK THEME */
-.theme-preview-theme-github-dark::before { background: #161b22; }
-.theme-preview-theme-github-dark::after { background: #0d1117; }
+.theme-preview-theme-github-dark .theme-preview-sidebar { background: #161b22; }
+.theme-preview-theme-github-dark .theme-preview-main { background: #0d1117; }
 .theme-preview-theme-github-dark .preview-nav-item { background: #21262d; }
 .theme-preview-theme-github-dark .preview-nav-item.selected { background: #58a6ff; }
 .theme-preview-theme-github-dark .preview-card-header { background: #bc8cff; }
@@ -504,8 +504,8 @@ app-root {
 .theme-preview-theme-github-dark .theme-preview-border { border-color: #30363d; }
 
 /* AYU DARK THEME */
-.theme-preview-theme-ayu-dark::before { background: #0f1419; }
-.theme-preview-theme-ayu-dark::after { background: #0a0e14; }
+.theme-preview-theme-ayu-dark .theme-preview-sidebar { background: #0f1419; }
+.theme-preview-theme-ayu-dark .theme-preview-main { background: #0a0e14; }
 .theme-preview-theme-ayu-dark .preview-nav-item { background: #1f2430; }
 .theme-preview-theme-ayu-dark .preview-nav-item.selected { background: #ffcc66; }
 .theme-preview-theme-ayu-dark .preview-card-header { background: #ffa759; }
@@ -514,8 +514,8 @@ app-root {
 .theme-preview-theme-ayu-dark .theme-preview-border { border-color: #1f2430; }
 
 /* COBALT THEME */
-.theme-preview-theme-cobalt::before { background: #193549; }
-.theme-preview-theme-cobalt::after { background: #002240; }
+.theme-preview-theme-cobalt .theme-preview-sidebar { background: #193549; }
+.theme-preview-theme-cobalt .theme-preview-main { background: #002240; }
 .theme-preview-theme-cobalt .preview-nav-item { background: #0050a4; }
 .theme-preview-theme-cobalt .preview-nav-item.selected { background: #0088ff; }
 .theme-preview-theme-cobalt .preview-card-header { background: #00d9ff; }
@@ -524,8 +524,8 @@ app-root {
 .theme-preview-theme-cobalt .theme-preview-border { border-color: #0050a4; }
 
 /* SYNTHWAVE THEME */
-.theme-preview-theme-synthwave::before { background: #2b213a; }
-.theme-preview-theme-synthwave::after { background: #262335; }
+.theme-preview-theme-synthwave .theme-preview-sidebar { background: #2b213a; }
+.theme-preview-theme-synthwave .theme-preview-main { background: #262335; }
 .theme-preview-theme-synthwave .preview-nav-item { background: #495495; }
 .theme-preview-theme-synthwave .preview-nav-item.selected { background: #ff7edb; }
 .theme-preview-theme-synthwave .preview-card-header { background: #b893ce; }
@@ -534,8 +534,8 @@ app-root {
 .theme-preview-theme-synthwave .theme-preview-border { border-color: #495495; }
 
 /* EVERFOREST THEME */
-.theme-preview-theme-everforest::before { background: #343f44; }
-.theme-preview-theme-everforest::after { background: #2d353b; }
+.theme-preview-theme-everforest .theme-preview-sidebar { background: #343f44; }
+.theme-preview-theme-everforest .theme-preview-main { background: #2d353b; }
 .theme-preview-theme-everforest .preview-nav-item { background: #3d484d; }
 .theme-preview-theme-everforest .preview-nav-item.selected { background: #a7c080; }
 .theme-preview-theme-everforest .preview-card-header { background: #7fbbb3; }
@@ -544,8 +544,8 @@ app-root {
 .theme-preview-theme-everforest .theme-preview-border { border-color: #3d484d; }
 
 /* PALENIGHT THEME */
-.theme-preview-theme-palenight::before { background: #32374d; }
-.theme-preview-theme-palenight::after { background: #292d3e; }
+.theme-preview-theme-palenight .theme-preview-sidebar { background: #32374d; }
+.theme-preview-theme-palenight .theme-preview-main { background: #292d3e; }
 .theme-preview-theme-palenight .preview-nav-item { background: #444267; }
 .theme-preview-theme-palenight .preview-nav-item.selected { background: #82aaff; }
 .theme-preview-theme-palenight .preview-card-header { background: #c792ea; }
@@ -562,6 +562,206 @@ app-root {
 .theme-preview-theme-horizon .preview-card-content { background: #e3e6ee; }
 .theme-preview-theme-horizon .theme-preview-card { background: #232530; }
 .theme-preview-theme-horizon .theme-preview-border { border-color: #2e303e; }
+
+/* FOREST THEME */
+.theme-preview-theme-forest .theme-preview-sidebar { background: #233623; }
+.theme-preview-theme-forest .theme-preview-main { background: #1a2e1a; }
+.theme-preview-theme-forest .preview-nav-item { background: #3d5a3d; }
+.theme-preview-theme-forest .preview-nav-item.selected { background: #6b8e23; }
+.theme-preview-theme-forest .preview-card-header { background: #8bc34a; }
+.theme-preview-theme-forest .preview-card-content { background: #d4e7d4; }
+.theme-preview-theme-forest .theme-preview-card { background: #233623; }
+.theme-preview-theme-forest .theme-preview-border { border-color: #3d5a3d; }
+
+/* SUNSET THEME */
+.theme-preview-theme-sunset .theme-preview-sidebar { background: #3d2532; }
+.theme-preview-theme-sunset .theme-preview-main { background: #2d1b2e; }
+.theme-preview-theme-sunset .preview-nav-item { background: #5d3a4a; }
+.theme-preview-theme-sunset .preview-nav-item.selected { background: #ff6b6b; }
+.theme-preview-theme-sunset .preview-card-header { background: #ff7f50; }
+.theme-preview-theme-sunset .preview-card-content { background: #ffd9b3; }
+.theme-preview-theme-sunset .theme-preview-card { background: #3d2532; }
+.theme-preview-theme-sunset .theme-preview-border { border-color: #5d3a4a; }
+
+/* MIDNIGHT BLUE THEME */
+.theme-preview-theme-midnight-blue .theme-preview-sidebar { background: #112240; }
+.theme-preview-theme-midnight-blue .theme-preview-main { background: #0a192f; }
+.theme-preview-theme-midnight-blue .preview-nav-item { background: #233554; }
+.theme-preview-theme-midnight-blue .preview-nav-item.selected { background: #64ffda; }
+.theme-preview-theme-midnight-blue .preview-card-header { background: #89ddff; }
+.theme-preview-theme-midnight-blue .preview-card-content { background: #ccd6f6; }
+.theme-preview-theme-midnight-blue .theme-preview-card { background: #112240; }
+.theme-preview-theme-midnight-blue .theme-preview-border { border-color: #233554; }
+
+/* CORAL REEF THEME */
+.theme-preview-theme-coral-reef .theme-preview-sidebar { background: #234963; }
+.theme-preview-theme-coral-reef .theme-preview-main { background: #1a3a52; }
+.theme-preview-theme-coral-reef .preview-nav-item { background: #2d5f7f; }
+.theme-preview-theme-coral-reef .preview-nav-item.selected { background: #ff6b9d; }
+.theme-preview-theme-coral-reef .preview-card-header { background: #ffa8cc; }
+.theme-preview-theme-coral-reef .preview-card-content { background: #f0e6d2; }
+.theme-preview-theme-coral-reef .theme-preview-card { background: #234963; }
+.theme-preview-theme-coral-reef .theme-preview-border { border-color: #2d5f7f; }
+
+/* DESERT SAND THEME */
+.theme-preview-theme-desert-sand .theme-preview-sidebar { background: #4d3f2f; }
+.theme-preview-theme-desert-sand .theme-preview-main { background: #3d2f1f; }
+.theme-preview-theme-desert-sand .preview-nav-item { background: #6d5843; }
+.theme-preview-theme-desert-sand .preview-nav-item.selected { background: #e67e22; }
+.theme-preview-theme-desert-sand .preview-card-header { background: #f39c12; }
+.theme-preview-theme-desert-sand .preview-card-content { background: #f5e6d3; }
+.theme-preview-theme-desert-sand .theme-preview-card { background: #4d3f2f; }
+.theme-preview-theme-desert-sand .theme-preview-border { border-color: #6d5843; }
+
+/* LAVENDER THEME */
+.theme-preview-theme-lavender .theme-preview-sidebar { background: #3a3052; }
+.theme-preview-theme-lavender .theme-preview-main { background: #2e2741; }
+.theme-preview-theme-lavender .preview-nav-item { background: #4d4063; }
+.theme-preview-theme-lavender .preview-nav-item.selected { background: #9b59b6; }
+.theme-preview-theme-lavender .preview-card-header { background: #bb8fce; }
+.theme-preview-theme-lavender .preview-card-content { background: #e8d5f2; }
+.theme-preview-theme-lavender .theme-preview-card { background: #3a3052; }
+.theme-preview-theme-lavender .theme-preview-border { border-color: #4d4063; }
+
+/* MINT THEME */
+.theme-preview-theme-mint .theme-preview-sidebar { background: #234442; }
+.theme-preview-theme-mint .theme-preview-main { background: #1a3332; }
+.theme-preview-theme-mint .preview-nav-item { background: #2d5654; }
+.theme-preview-theme-mint .preview-nav-item.selected { background: #26d0ce; }
+.theme-preview-theme-mint .preview-card-header { background: #4ecdc4; }
+.theme-preview-theme-mint .preview-card-content { background: #d5f4e6; }
+.theme-preview-theme-mint .theme-preview-card { background: #234442; }
+.theme-preview-theme-mint .theme-preview-border { border-color: #2d5654; }
+
+/* CHERRY BLOSSOM THEME */
+.theme-preview-theme-cherry-blossom .theme-preview-sidebar { background: #4a3343; }
+.theme-preview-theme-cherry-blossom .theme-preview-main { background: #3a2633; }
+.theme-preview-theme-cherry-blossom .preview-nav-item { background: #5d4356; }
+.theme-preview-theme-cherry-blossom .preview-nav-item.selected { background: #ff69b4; }
+.theme-preview-theme-cherry-blossom .preview-card-header { background: #ffb6d9; }
+.theme-preview-theme-cherry-blossom .preview-card-content { background: #ffe6f0; }
+.theme-preview-theme-cherry-blossom .theme-preview-card { background: #4a3343; }
+.theme-preview-theme-cherry-blossom .theme-preview-border { border-color: #5d4356; }
+
+/* VOLCANO THEME */
+.theme-preview-theme-volcano .theme-preview-sidebar { background: #3d2424; }
+.theme-preview-theme-volcano .theme-preview-main { background: #2b1a1a; }
+.theme-preview-theme-volcano .preview-nav-item { background: #5a3434; }
+.theme-preview-theme-volcano .preview-nav-item.selected { background: #ff4500; }
+.theme-preview-theme-volcano .preview-card-header { background: #ff6347; }
+.theme-preview-theme-volcano .preview-card-content { background: #ffd4cc; }
+.theme-preview-theme-volcano .theme-preview-card { background: #3d2424; }
+.theme-preview-theme-volcano .theme-preview-border { border-color: #5a3434; }
+
+/* ARCTIC THEME */
+.theme-preview-theme-arctic .theme-preview-sidebar { background: #24394d; }
+.theme-preview-theme-arctic .theme-preview-main { background: #1a2d3d; }
+.theme-preview-theme-arctic .preview-nav-item { background: #344d62; }
+.theme-preview-theme-arctic .preview-nav-item.selected { background: #00bfff; }
+.theme-preview-theme-arctic .preview-card-header { background: #4fc3f7; }
+.theme-preview-theme-arctic .preview-card-content { background: #e0f7ff; }
+.theme-preview-theme-arctic .theme-preview-card { background: #24394d; }
+.theme-preview-theme-arctic .theme-preview-border { border-color: #344d62; }
+
+/* AMBER THEME */
+.theme-preview-theme-amber .theme-preview-sidebar { background: #4d3621; }
+.theme-preview-theme-amber .theme-preview-main { background: #3d2817; }
+.theme-preview-theme-amber .preview-nav-item { background: #6d4e31; }
+.theme-preview-theme-amber .preview-nav-item.selected { background: #ff9800; }
+.theme-preview-theme-amber .preview-card-header { background: #ffb74d; }
+.theme-preview-theme-amber .preview-card-content { background: #fff3e0; }
+.theme-preview-theme-amber .theme-preview-card { background: #4d3621; }
+.theme-preview-theme-amber .theme-preview-border { border-color: #6d4e31; }
+
+/* SLATE THEME */
+.theme-preview-theme-slate .theme-preview-sidebar { background: #2d3436; }
+.theme-preview-theme-slate .theme-preview-main { background: #1e272e; }
+.theme-preview-theme-slate .preview-nav-item { background: #4a5158; }
+.theme-preview-theme-slate .preview-nav-item.selected { background: #636e72; }
+.theme-preview-theme-slate .preview-card-header { background: #74b9ff; }
+.theme-preview-theme-slate .preview-card-content { background: #dfe6e9; }
+.theme-preview-theme-slate .theme-preview-card { background: #2d3436; }
+.theme-preview-theme-slate .theme-preview-border { border-color: #4a5158; }
+
+/* WINE THEME */
+.theme-preview-theme-wine .theme-preview-sidebar { background: #3d2136; }
+.theme-preview-theme-wine .theme-preview-main { background: #2d1726; }
+.theme-preview-theme-wine .preview-nav-item { background: #5a3349; }
+.theme-preview-theme-wine .preview-nav-item.selected { background: #c2185b; }
+.theme-preview-theme-wine .preview-card-header { background: #f06292; }
+.theme-preview-theme-wine .preview-card-content { background: #f5e6ee; }
+.theme-preview-theme-wine .theme-preview-card { background: #3d2136; }
+.theme-preview-theme-wine .theme-preview-border { border-color: #5a3349; }
+
+/* TEAL THEME */
+.theme-preview-theme-teal .theme-preview-sidebar { background: #26403f; }
+.theme-preview-theme-teal .theme-preview-main { background: #1a2f2f; }
+.theme-preview-theme-teal .preview-nav-item { background: #375757; }
+.theme-preview-theme-teal .preview-nav-item.selected { background: #009688; }
+.theme-preview-theme-teal .preview-card-header { background: #26a69a; }
+.theme-preview-theme-teal .preview-card-content { background: #e0f2f1; }
+.theme-preview-theme-teal .theme-preview-card { background: #26403f; }
+.theme-preview-theme-teal .theme-preview-border { border-color: #375757; }
+
+/* PLUM THEME */
+.theme-preview-theme-plum .theme-preview-sidebar { background: #3a2d43; }
+.theme-preview-theme-plum .theme-preview-main { background: #2a1f30; }
+.theme-preview-theme-plum .preview-nav-item { background: #4d3d5a; }
+.theme-preview-theme-plum .preview-nav-item.selected { background: #7b2cbf; }
+.theme-preview-theme-plum .preview-card-header { background: #9d4edd; }
+.theme-preview-theme-plum .preview-card-content { background: #f0e5f5; }
+.theme-preview-theme-plum .theme-preview-card { background: #3a2d43; }
+.theme-preview-theme-plum .theme-preview-border { border-color: #4d3d5a; }
+
+/* BRONZE THEME */
+.theme-preview-theme-bronze .theme-preview-sidebar { background: #3d3223; }
+.theme-preview-theme-bronze .theme-preview-main { background: #2d2419; }
+.theme-preview-theme-bronze .preview-nav-item { background: #5a4933; }
+.theme-preview-theme-bronze .preview-nav-item.selected { background: #cd7f32; }
+.theme-preview-theme-bronze .preview-card-header { background: #daa520; }
+.theme-preview-theme-bronze .preview-card-content { background: #f5e6d3; }
+.theme-preview-theme-bronze .theme-preview-card { background: #3d3223; }
+.theme-preview-theme-bronze .theme-preview-border { border-color: #5a4933; }
+
+/* CYBER THEME */
+.theme-preview-theme-cyber .theme-preview-sidebar { background: #16032e; }
+.theme-preview-theme-cyber .theme-preview-main { background: #0d0221; }
+.theme-preview-theme-cyber .preview-nav-item { background: #240046; }
+.theme-preview-theme-cyber .preview-nav-item.selected { background: #f72585; }
+.theme-preview-theme-cyber .preview-card-header { background: #7209b7; }
+.theme-preview-theme-cyber .preview-card-content { background: #00ffff; }
+.theme-preview-theme-cyber .theme-preview-card { background: #16032e; }
+.theme-preview-theme-cyber .theme-preview-border { border-color: #240046; }
+
+/* EMERALD THEME */
+.theme-preview-theme-emerald .theme-preview-sidebar { background: #254d32; }
+.theme-preview-theme-emerald .theme-preview-main { background: #1a2f23; }
+.theme-preview-theme-emerald .preview-nav-item { background: #356844; }
+.theme-preview-theme-emerald .preview-nav-item.selected { background: #27ae60; }
+.theme-preview-theme-emerald .preview-card-header { background: #58d68d; }
+.theme-preview-theme-emerald .preview-card-content { background: #d5f5e3; }
+.theme-preview-theme-emerald .theme-preview-card { background: #254d32; }
+.theme-preview-theme-emerald .theme-preview-border { border-color: #356844; }
+
+/* RUST THEME */
+.theme-preview-theme-rust .theme-preview-sidebar { background: #3d2a24; }
+.theme-preview-theme-rust .theme-preview-main { background: #2d1f1a; }
+.theme-preview-theme-rust .preview-nav-item { background: #5a3f33; }
+.theme-preview-theme-rust .preview-nav-item.selected { background: #b7410e; }
+.theme-preview-theme-rust .preview-card-header { background: #e67e22; }
+.theme-preview-theme-rust .preview-card-content { background: #f5deb3; }
+.theme-preview-theme-rust .theme-preview-card { background: #3d2a24; }
+.theme-preview-theme-rust .theme-preview-border { border-color: #5a3f33; }
+
+/* BLUEBERRY THEME */
+.theme-preview-theme-blueberry .theme-preview-sidebar { background: #242947; }
+.theme-preview-theme-blueberry .theme-preview-main { background: #1a1f3a; }
+.theme-preview-theme-blueberry .preview-nav-item { background: #343d5c; }
+.theme-preview-theme-blueberry .preview-nav-item.selected { background: #4c51bf; }
+.theme-preview-theme-blueberry .preview-card-header { background: #667eea; }
+.theme-preview-theme-blueberry .preview-card-content { background: #e0e7ff; }
+.theme-preview-theme-blueberry .theme-preview-card { background: #242947; }
+.theme-preview-theme-blueberry .theme-preview-border { border-color: #343d5c; }
 
 .theme-card span {
     font-size: 14px;

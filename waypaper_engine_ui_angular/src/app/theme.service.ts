@@ -131,6 +131,126 @@ export class ThemeService {
       name: 'Horizon',
       className: 'theme-horizon',
       preview: '#fab795'
+    },
+    {
+      id: 'theme-forest',
+      name: 'Forêt',
+      className: 'theme-forest',
+      preview: '#6b8e23'
+    },
+    {
+      id: 'theme-sunset',
+      name: 'Sunset',
+      className: 'theme-sunset',
+      preview: '#ff6b6b'
+    },
+    {
+      id: 'theme-midnight-blue',
+      name: 'Midnight Blue',
+      className: 'theme-midnight-blue',
+      preview: '#64ffda'
+    },
+    {
+      id: 'theme-coral-reef',
+      name: 'Coral Reef',
+      className: 'theme-coral-reef',
+      preview: '#ff6b9d'
+    },
+    {
+      id: 'theme-desert-sand',
+      name: 'Desert Sand',
+      className: 'theme-desert-sand',
+      preview: '#e67e22'
+    },
+    {
+      id: 'theme-lavender',
+      name: 'Lavender',
+      className: 'theme-lavender',
+      preview: '#9b59b6'
+    },
+    {
+      id: 'theme-mint',
+      name: 'Mint',
+      className: 'theme-mint',
+      preview: '#26d0ce'
+    },
+    {
+      id: 'theme-cherry-blossom',
+      name: 'Cherry Blossom',
+      className: 'theme-cherry-blossom',
+      preview: '#ff69b4'
+    },
+    {
+      id: 'theme-volcano',
+      name: 'Volcano',
+      className: 'theme-volcano',
+      preview: '#ff4500'
+    },
+    {
+      id: 'theme-arctic',
+      name: 'Arctic',
+      className: 'theme-arctic',
+      preview: '#00bfff'
+    },
+    {
+      id: 'theme-amber',
+      name: 'Amber',
+      className: 'theme-amber',
+      preview: '#ff9800'
+    },
+    {
+      id: 'theme-slate',
+      name: 'Slate',
+      className: 'theme-slate',
+      preview: '#636e72'
+    },
+    {
+      id: 'theme-wine',
+      name: 'Wine',
+      className: 'theme-wine',
+      preview: '#c2185b'
+    },
+    {
+      id: 'theme-teal',
+      name: 'Teal',
+      className: 'theme-teal',
+      preview: '#009688'
+    },
+    {
+      id: 'theme-plum',
+      name: 'Plum',
+      className: 'theme-plum',
+      preview: '#7b2cbf'
+    },
+    {
+      id: 'theme-bronze',
+      name: 'Bronze',
+      className: 'theme-bronze',
+      preview: '#cd7f32'
+    },
+    {
+      id: 'theme-cyber',
+      name: 'Cyber',
+      className: 'theme-cyber',
+      preview: '#f72585'
+    },
+    {
+      id: 'theme-emerald',
+      name: 'Emerald',
+      className: 'theme-emerald',
+      preview: '#27ae60'
+    },
+    {
+      id: 'theme-rust',
+      name: 'Rust',
+      className: 'theme-rust',
+      preview: '#b7410e'
+    },
+    {
+      id: 'theme-blueberry',
+      name: 'Blueberry',
+      className: 'theme-blueberry',
+      preview: '#4c51bf'
     }
   ];
 

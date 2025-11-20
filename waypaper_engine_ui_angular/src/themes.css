@@ -396,3 +396,424 @@ html.theme-horizon {
     --success: #09f7a0;
     --accent: #f09383;
 }
+
+/* ============ FOREST THEME ============ */
+html.theme-forest {
+    --background: #1a2e1a;
+    --text: #d4e7d4;
+    --sidebar-bg: #233623;
+    --main-bg: #1a2e1a;
+    --input-bg: #233623;
+    --input-border: #3d5a3d;
+    --input-text: #d4e7d4;
+    --nav-text: #8fbc8f;
+    --nav-selected: #6b8e23;
+    --nav-hover: #2d4a2d;
+    --card-bg: #233623;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(107, 142, 35, 0.9);
+    --border-color: #3d5a3d;
+    --danger: #c45a5a;
+    --success: #7cb342;
+    --accent: #8bc34a;
+}
+
+/* ============ SUNSET THEME ============ */
+html.theme-sunset {
+    --background: #2d1b2e;
+    --text: #ffd9b3;
+    --sidebar-bg: #3d2532;
+    --main-bg: #2d1b2e;
+    --input-bg: #3d2532;
+    --input-border: #5d3a4a;
+    --input-text: #ffd9b3;
+    --nav-text: #e6a88a;
+    --nav-selected: #ff6b6b;
+    --nav-hover: #4a2f3c;
+    --card-bg: #3d2532;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(255, 107, 107, 0.9);
+    --border-color: #5d3a4a;
+    --danger: #ff4757;
+    --success: #ffa502;
+    --accent: #ff7f50;
+}
+
+/* ============ MIDNIGHT BLUE THEME ============ */
+html.theme-midnight-blue {
+    --background: #0a192f;
+    --text: #ccd6f6;
+    --sidebar-bg: #112240;
+    --main-bg: #0a192f;
+    --input-bg: #112240;
+    --input-border: #233554;
+    --input-text: #ccd6f6;
+    --nav-text: #8892b0;
+    --nav-selected: #64ffda;
+    --nav-hover: #172a45;
+    --card-bg: #112240;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(100, 255, 218, 0.9);
+    --border-color: #233554;
+    --danger: #f07178;
+    --success: #c3e88d;
+    --accent: #89ddff;
+}
+
+/* ============ CORAL REEF THEME ============ */
+html.theme-coral-reef {
+    --background: #1a3a52;
+    --text: #f0e6d2;
+    --sidebar-bg: #234963;
+    --main-bg: #1a3a52;
+    --input-bg: #234963;
+    --input-border: #2d5f7f;
+    --input-text: #f0e6d2;
+    --nav-text: #a8dadc;
+    --nav-selected: #ff6b9d;
+    --nav-hover: #2a4a5f;
+    --card-bg: #234963;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(255, 107, 157, 0.9);
+    --border-color: #2d5f7f;
+    --danger: #ff6b6b;
+    --success: #51cf66;
+    --accent: #ffa8cc;
+}
+
+/* ============ DESERT SAND THEME ============ */
+html.theme-desert-sand {
+    --background: #3d2f1f;
+    --text: #f5e6d3;
+    --sidebar-bg: #4d3f2f;
+    --main-bg: #3d2f1f;
+    --input-bg: #4d3f2f;
+    --input-border: #6d5843;
+    --input-text: #f5e6d3;
+    --nav-text: #d4a574;
+    --nav-selected: #e67e22;
+    --nav-hover: #5a4a3a;
+    --card-bg: #4d3f2f;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(230, 126, 34, 0.9);
+    --border-color: #6d5843;
+    --danger: #d35400;
+    --success: #27ae60;
+    --accent: #f39c12;
+}
+
+/* ============ LAVENDER THEME ============ */
+html.theme-lavender {
+    --background: #2e2741;
+    --text: #e8d5f2;
+    --sidebar-bg: #3a3052;
+    --main-bg: #2e2741;
+    --input-bg: #3a3052;
+    --input-border: #4d4063;
+    --input-text: #e8d5f2;
+    --nav-text: #c7a5dc;
+    --nav-selected: #9b59b6;
+    --nav-hover: #433858;
+    --card-bg: #3a3052;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(155, 89, 182, 0.9);
+    --border-color: #4d4063;
+    --danger: #e74c3c;
+    --success: #2ecc71;
+    --accent: #bb8fce;
+}
+
+/* ============ MINT THEME ============ */
+html.theme-mint {
+    --background: #1a3332;
+    --text: #d5f4e6;
+    --sidebar-bg: #234442;
+    --main-bg: #1a3332;
+    --input-bg: #234442;
+    --input-border: #2d5654;
+    --input-text: #d5f4e6;
+    --nav-text: #7dd3c0;
+    --nav-selected: #26d0ce;
+    --nav-hover: #2d4a48;
+    --card-bg: #234442;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(38, 208, 206, 0.9);
+    --border-color: #2d5654;
+    --danger: #ff6b6b;
+    --success: #51cf66;
+    --accent: #4ecdc4;
+}
+
+/* ============ CHERRY BLOSSOM THEME ============ */
+html.theme-cherry-blossom {
+    --background: #3a2633;
+    --text: #ffe6f0;
+    --sidebar-bg: #4a3343;
+    --main-bg: #3a2633;
+    --input-bg: #4a3343;
+    --input-border: #5d4356;
+    --input-text: #ffe6f0;
+    --nav-text: #f4b4d4;
+    --nav-selected: #ff69b4;
+    --nav-hover: #533b4a;
+    --card-bg: #4a3343;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(255, 105, 180, 0.9);
+    --border-color: #5d4356;
+    --danger: #ff1493;
+    --success: #98d8c8;
+    --accent: #ffb6d9;
+}
+
+/* ============ VOLCANO THEME ============ */
+html.theme-volcano {
+    --background: #2b1a1a;
+    --text: #ffd4cc;
+    --sidebar-bg: #3d2424;
+    --main-bg: #2b1a1a;
+    --input-bg: #3d2424;
+    --input-border: #5a3434;
+    --input-text: #ffd4cc;
+    --nav-text: #ff9980;
+    --nav-selected: #ff4500;
+    --nav-hover: #4a2e2e;
+    --card-bg: #3d2424;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(255, 69, 0, 0.9);
+    --border-color: #5a3434;
+    --danger: #d32f2f;
+    --success: #ffa726;
+    --accent: #ff6347;
+}
+
+/* ============ ARCTIC THEME ============ */
+html.theme-arctic {
+    --background: #1a2d3d;
+    --text: #e0f7ff;
+    --sidebar-bg: #24394d;
+    --main-bg: #1a2d3d;
+    --input-bg: #24394d;
+    --input-border: #344d62;
+    --input-text: #e0f7ff;
+    --nav-text: #9dd9f3;
+    --nav-selected: #00bfff;
+    --nav-hover: #2d4455;
+    --card-bg: #24394d;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(0, 191, 255, 0.9);
+    --border-color: #344d62;
+    --danger: #64b5f6;
+    --success: #81c784;
+    --accent: #4fc3f7;
+}
+
+/* ============ AMBER THEME ============ */
+html.theme-amber {
+    --background: #3d2817;
+    --text: #fff3e0;
+    --sidebar-bg: #4d3621;
+    --main-bg: #3d2817;
+    --input-bg: #4d3621;
+    --input-border: #6d4e31;
+    --input-text: #fff3e0;
+    --nav-text: #ffcc80;
+    --nav-selected: #ff9800;
+    --nav-hover: #5a4228;
+    --card-bg: #4d3621;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(255, 152, 0, 0.9);
+    --border-color: #6d4e31;
+    --danger: #f4511e;
+    --success: #8bc34a;
+    --accent: #ffb74d;
+}
+
+/* ============ SLATE THEME ============ */
+html.theme-slate {
+    --background: #1e272e;
+    --text: #dfe6e9;
+    --sidebar-bg: #2d3436;
+    --main-bg: #1e272e;
+    --input-bg: #2d3436;
+    --input-border: #4a5158;
+    --input-text: #dfe6e9;
+    --nav-text: #b2bec3;
+    --nav-selected: #636e72;
+    --nav-hover: #3a4046;
+    --card-bg: #2d3436;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(99, 110, 114, 0.9);
+    --border-color: #4a5158;
+    --danger: #d63031;
+    --success: #00b894;
+    --accent: #74b9ff;
+}
+
+/* ============ WINE THEME ============ */
+html.theme-wine {
+    --background: #2d1726;
+    --text: #f5e6ee;
+    --sidebar-bg: #3d2136;
+    --main-bg: #2d1726;
+    --input-bg: #3d2136;
+    --input-border: #5a3349;
+    --input-text: #f5e6ee;
+    --nav-text: #d19cb8;
+    --nav-selected: #c2185b;
+    --nav-hover: #4a2a3d;
+    --card-bg: #3d2136;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(194, 24, 91, 0.9);
+    --border-color: #5a3349;
+    --danger: #e91e63;
+    --success: #66bb6a;
+    --accent: #f06292;
+}
+
+/* ============ TEAL THEME ============ */
+html.theme-teal {
+    --background: #1a2f2f;
+    --text: #e0f2f1;
+    --sidebar-bg: #26403f;
+    --main-bg: #1a2f2f;
+    --input-bg: #26403f;
+    --input-border: #375757;
+    --input-text: #e0f2f1;
+    --nav-text: #80cbc4;
+    --nav-selected: #009688;
+    --nav-hover: #2d4847;
+    --card-bg: #26403f;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(0, 150, 136, 0.9);
+    --border-color: #375757;
+    --danger: #f44336;
+    --success: #4caf50;
+    --accent: #26a69a;
+}
+
+/* ============ PLUM THEME ============ */
+html.theme-plum {
+    --background: #2a1f30;
+    --text: #f0e5f5;
+    --sidebar-bg: #3a2d43;
+    --main-bg: #2a1f30;
+    --input-bg: #3a2d43;
+    --input-border: #4d3d5a;
+    --input-text: #f0e5f5;
+    --nav-text: #c9a9d9;
+    --nav-selected: #7b2cbf;
+    --nav-hover: #473951;
+    --card-bg: #3a2d43;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(123, 44, 191, 0.9);
+    --border-color: #4d3d5a;
+    --danger: #e94560;
+    --success: #00d9a3;
+    --accent: #9d4edd;
+}
+
+/* ============ BRONZE THEME ============ */
+html.theme-bronze {
+    --background: #2d2419;
+    --text: #f5e6d3;
+    --sidebar-bg: #3d3223;
+    --main-bg: #2d2419;
+    --input-bg: #3d3223;
+    --input-border: #5a4933;
+    --input-text: #f5e6d3;
+    --nav-text: #d4a574;
+    --nav-selected: #cd7f32;
+    --nav-hover: #4a3d2d;
+    --card-bg: #3d3223;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(205, 127, 50, 0.9);
+    --border-color: #5a4933;
+    --danger: #d35400;
+    --success: #27ae60;
+    --accent: #daa520;
+}
+
+/* ============ CYBER THEME ============ */
+html.theme-cyber {
+    --background: #0d0221;
+    --text: #00ffff;
+    --sidebar-bg: #16032e;
+    --main-bg: #0d0221;
+    --input-bg: #16032e;
+    --input-border: #240046;
+    --input-text: #00ffff;
+    --nav-text: #3a0ca3;
+    --nav-selected: #f72585;
+    --nav-hover: #1f0638;
+    --card-bg: #16032e;
+    --card-shadow: rgba(247, 37, 133, 0.3);
+    --overlay-bg: rgba(247, 37, 133, 0.9);
+    --border-color: #240046;
+    --danger: #ff006e;
+    --success: #06ffa5;
+    --accent: #7209b7;
+}
+
+/* ============ EMERALD THEME ============ */
+html.theme-emerald {
+    --background: #1a2f23;
+    --text: #d5f5e3;
+    --sidebar-bg: #254d32;
+    --main-bg: #1a2f23;
+    --input-bg: #254d32;
+    --input-border: #356844;
+    --input-text: #d5f5e3;
+    --nav-text: #7dd3a7;
+    --nav-selected: #27ae60;
+    --nav-hover: #2d4034;
+    --card-bg: #254d32;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(39, 174, 96, 0.9);
+    --border-color: #356844;
+    --danger: #e74c3c;
+    --success: #2ecc71;
+    --accent: #58d68d;
+}
+
+/* ============ RUST THEME ============ */
+html.theme-rust {
+    --background: #2d1f1a;
+    --text: #f5deb3;
+    --sidebar-bg: #3d2a24;
+    --main-bg: #2d1f1a;
+    --input-bg: #3d2a24;
+    --input-border: #5a3f33;
+    --input-text: #f5deb3;
+    --nav-text: #cd8b65;
+    --nav-selected: #b7410e;
+    --nav-hover: #4a3329;
+    --card-bg: #3d2a24;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(183, 65, 14, 0.9);
+    --border-color: #5a3f33;
+    --danger: #c0392b;
+    --success: #f39c12;
+    --accent: #e67e22;
+}
+
+/* ============ BLUEBERRY THEME ============ */
+html.theme-blueberry {
+    --background: #1a1f3a;
+    --text: #e0e7ff;
+    --sidebar-bg: #242947;
+    --main-bg: #1a1f3a;
+    --input-bg: #242947;
+    --input-border: #343d5c;
+    --input-text: #e0e7ff;
+    --nav-text: #a5b4fc;
+    --nav-selected: #4c51bf;
+    --nav-hover: #2d3348;
+    --card-bg: #242947;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --overlay-bg: rgba(76, 81, 191, 0.9);
+    --border-color: #343d5c;
+    --danger: #f56565;
+    --success: #48bb78;
+    --accent: #667eea;
+}
+
