@@ -1,14 +1,13 @@
 {
   "name": "waypaper-engine-ui-angular",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "dev": "ng serve",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "tauri": "tauri",
     "tauri:dev": "tauri dev",
     "tauri:build": "tauri build"
   },
@@ -24,7 +23,6 @@
       }
     ]
   },
-  "private": true,
   "dependencies": {
     "@angular/common": "^20.3.0",
     "@angular/compiler": "^20.3.0",

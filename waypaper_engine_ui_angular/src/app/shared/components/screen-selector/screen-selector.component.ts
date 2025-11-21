@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ScreenSelectorComponent {
   @Input() screens: string[] = [];
-  @Input() selectedScreen: string = '';
+  @Input() selectedScreen = '';
   @Output() screenChange = new EventEmitter<string>();
 
   onScreenChange(screen: string): void {

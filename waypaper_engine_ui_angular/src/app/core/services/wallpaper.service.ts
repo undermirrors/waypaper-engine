@@ -8,8 +8,9 @@ import { APP_CONSTANTS } from '../constants/app.constants';
   providedIn: 'root'
 })
 export class WallpaperService {
-  private wallpapersSubject = new BehaviorSubject<Wallpaper[]>([]);
-  public wallpapers$: Observable<Wallpaper[]> = this.wallpapersSubject.asObservable();
+  private readonly wallpapersSubject = new BehaviorSubject<Wallpaper[]>([]);
+  public readonly wallpapers$: Observable<Wallpaper[]> = this.wallpapersSubject.asObservable();
+
   private isLoaded = false;
   private currentFilter = '';
 
@@ -24,7 +25,6 @@ export class WallpaperService {
   }
 
   async notifyLoaded(): Promise<void> {
-    // Ne charger qu'une seule fois
     if (!this.isLoaded) {
       await this.tauriService.invoke(APP_CONSTANTS.TAURI_COMMANDS.LOADED);
     }
@@ -35,7 +35,6 @@ export class WallpaperService {
   }
 
   async applyFilter(search: string): Promise<void> {
-    // Ne réappliquer le filtre que s'il a changé
     if (this.currentFilter !== search) {
       this.currentFilter = search;
       await this.tauriService.invoke(APP_CONSTANTS.TAURI_COMMANDS.APPLY_FILTER, { search });
@@ -46,7 +45,6 @@ export class WallpaperService {
     return this.currentFilter;
   }
 
-  // Méthode pour forcer un rechargement si nécessaire
   async reload(): Promise<void> {
     this.isLoaded = false;
     await this.notifyLoaded();

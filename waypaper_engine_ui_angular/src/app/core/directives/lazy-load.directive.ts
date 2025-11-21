@@ -1,30 +1,42 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
 
 @Directive({
   selector: '[appLazyLoad]',
   standalone: true
 })
-export class LazyLoadDirective {
-  @Input() appLazyLoad: string = '';
+export class LazyLoadDirective implements OnInit, OnDestroy {
+  @Input() appLazyLoad = '';
 
-  constructor(private el: ElementRef) {}
+  private observer?: IntersectionObserver;
 
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    const rect = this.el.nativeElement.getBoundingClientRect();
-    const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+  constructor(private el: ElementRef<HTMLElement>) {}
 
-    if (isVisible && this.appLazyLoad) {
-      this.loadImage();
-    }
+  ngOnInit(): void {
+    if (!this.appLazyLoad) return;
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.loadImage();
+          this.observer?.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    this.observer.observe(this.el.nativeElement);
   }
 
-  private loadImage() {
-    const img = this.el.nativeElement;
-    if (img.tagName === 'IMG' && this.appLazyLoad) {
-      img.src = this.appLazyLoad;
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
+  private loadImage(): void {
+    const element = this.el.nativeElement;
+
+    if (element.tagName === 'IMG') {
+      (element as HTMLImageElement).src = this.appLazyLoad;
     } else {
-      img.style.backgroundImage = `url(${this.appLazyLoad})`;
+      element.style.backgroundImage = `url(${this.appLazyLoad})`;
     }
   }
 }

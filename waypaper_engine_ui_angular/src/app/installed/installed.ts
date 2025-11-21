@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { WallpaperService } from '../core/services/wallpaper.service';
 import { ScreenService } from '../core/services/screen.service';
 import { Wallpaper } from '../core/models/wallpaper.model';
 import { WallpaperCardComponent } from '../shared/components/wallpaper-card/wallpaper-card.component';
 import { SearchBarComponent } from '../shared/components/search-bar/search-bar.component';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-installed',
@@ -13,32 +13,25 @@ import { Subscription } from 'rxjs';
   templateUrl: './installed.html',
   styleUrl: './installed.css'
 })
-export class InstalledComponent implements OnInit, OnDestroy {
+export class InstalledComponent implements OnInit {
+  private readonly destroyRef = inject(DestroyRef);
+
   wallpapers: Wallpaper[] = [];
-  search: string = '';
-  private subscription?: Subscription;
+  search = '';
 
   constructor(
     private wallpaperService: WallpaperService,
     private screenService: ScreenService
   ) {}
 
-  async ngOnInit() {
-    // Récupérer le filtre actuel pour maintenir l'état de recherche
+  async ngOnInit(): Promise<void> {
     this.search = this.wallpaperService.getCurrentFilter();
 
-    // S'abonner aux changements de wallpapers
-    this.subscription = this.wallpaperService.wallpapers$.subscribe(
-      wallpapers => this.wallpapers = wallpapers
-    );
+    this.wallpaperService.wallpapers$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(wallpapers => this.wallpapers = wallpapers);
 
-    // Charger uniquement si pas déjà chargé (mise en cache)
     await this.wallpaperService.notifyLoaded();
-  }
-
-  ngOnDestroy() {
-    // Nettoyer l'abonnement pour éviter les fuites mémoire
-    this.subscription?.unsubscribe();
   }
 
   async onWallpaperClick(wpId: number): Promise<void> {
@@ -51,8 +44,7 @@ export class InstalledComponent implements OnInit, OnDestroy {
     await this.wallpaperService.applyFilter(search);
   }
 
-  // Fonction trackBy pour optimiser les performances de *ngFor
-  trackByWallpaperId(index: number, wallpaper: Wallpaper): number {
+  trackByWallpaperId(_index: number, wallpaper: Wallpaper): number {
     return wallpaper.id;
   }
 }

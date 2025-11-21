@@ -7,28 +7,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TauriService {
-
-  async invoke<T>(command: string, args?: Record<string, any>): Promise<T> {
+  async invoke<T>(command: string, args?: Record<string, unknown>): Promise<T> {
     return invoke<T>(command, args);
   }
 
   listen<T>(event: string): Observable<T> {
     return new Observable<T>((subscriber) => {
-      let unlisten: UnlistenFn;
+      let unlisten: UnlistenFn | undefined;
 
-      listen<T>(event, (event) => {
-        subscriber.next(event.payload);
-      }).then((fn) => {
-        unlisten = fn;
-      }).catch((error) => {
-        subscriber.error(error);
-      });
+      listen<T>(event, (event) => subscriber.next(event.payload))
+        .then((fn) => unlisten = fn)
+        .catch((error) => subscriber.error(error));
 
-      return () => {
-        if (unlisten) {
-          unlisten();
-        }
-      };
+      return () => unlisten?.();
     });
   }
 }

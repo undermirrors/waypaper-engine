@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ThemeService } from './theme.service';
 import { ScreenService } from './core/services/screen.service';
 import { ScreenSelectorComponent } from './shared/components/screen-selector/screen-selector.component';
@@ -19,25 +20,28 @@ import { ScreenSelectorComponent } from './shared/components/screen-selector/scr
   ]
 })
 export class AppComponent implements OnInit {
+  private readonly destroyRef = inject(DestroyRef);
+
   screens: string[] = [];
-  selectedScreen: string = '';
+  selectedScreen = '';
 
   constructor(
     private themeService: ThemeService,
     private screenService: ScreenService
   ) {}
 
-  async ngOnInit() {
-    // Appliquer le thème par défaut
-    const currentTheme = this.themeService.getCurrentTheme();
-    if (currentTheme) {
-      this.themeService.applyTheme(currentTheme);
-    }
+  async ngOnInit(): Promise<void> {
+    this.themeService.applyTheme(this.themeService.getCurrentTheme());
 
-    // Charger les écrans
     await this.screenService.loadScreens();
-    this.screenService.screens$.subscribe(screens => this.screens = screens);
-    this.screenService.selectedScreen$.subscribe(screen => this.selectedScreen = screen);
+
+    this.screenService.screens$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(screens => this.screens = screens);
+
+    this.screenService.selectedScreen$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(screen => this.selectedScreen = screen);
   }
 
   onScreenChange(screen: string): void {

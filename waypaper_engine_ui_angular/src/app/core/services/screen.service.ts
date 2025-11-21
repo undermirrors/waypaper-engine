@@ -8,11 +8,11 @@ import { StorageUtil } from '../utils/storage.util';
   providedIn: 'root'
 })
 export class ScreenService {
-  private screensSubject = new BehaviorSubject<string[]>([]);
-  public screens$: Observable<string[]> = this.screensSubject.asObservable();
+  private readonly screensSubject = new BehaviorSubject<string[]>([]);
+  public readonly screens$: Observable<string[]> = this.screensSubject.asObservable();
 
-  private selectedScreenSubject = new BehaviorSubject<string>('');
-  public selectedScreen$: Observable<string> = this.selectedScreenSubject.asObservable();
+  private readonly selectedScreenSubject = new BehaviorSubject<string>('');
+  public readonly selectedScreen$: Observable<string> = this.selectedScreenSubject.asObservable();
 
   constructor(private tauriService: TauriService) {
     const savedScreen = StorageUtil.get<string>(APP_CONSTANTS.STORAGE_KEYS.SELECTED_SCREEN, '');
@@ -36,7 +36,7 @@ export class ScreenService {
   }
 
   getSelectedScreen(): string {
-    return this.selectedScreenSubject.value || '';
+    return this.selectedScreenSubject.value;
   }
 }
 

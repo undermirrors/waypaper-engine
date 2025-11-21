@@ -12,7 +12,7 @@ import { Theme } from '../../../core/models/theme.model';
 export class ThemeSelectorComponent {
   @Input() themes: Theme[] = [];
   @Input() currentTheme?: Theme;
-  @Input() visible: boolean = false;
+  @Input() visible = false;
   @Output() themeSelect = new EventEmitter<Theme>();
   @Output() close = new EventEmitter<void>();
 

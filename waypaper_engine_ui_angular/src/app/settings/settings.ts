@@ -11,15 +11,15 @@ import { Theme } from '../core/models/theme.model';
   styleUrl: './settings.css'
 })
 export class SettingsComponent implements OnInit {
-  themes: Theme[] = [];
-  currentTheme: Theme | undefined;
+  themes: readonly Theme[] = [];
+  currentTheme?: Theme;
 
   constructor(
     private themeService: ThemeService,
     private daemonService: DaemonService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.themes = this.themeService.getThemes();
     this.currentTheme = this.themeService.getCurrentTheme();
   }
