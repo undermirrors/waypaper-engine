@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Wallpaper } from '../../../core/models/wallpaper.model';
 
@@ -7,7 +7,8 @@ import { Wallpaper } from '../../../core/models/wallpaper.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './wallpaper-card.component.html',
-  styleUrl: './wallpaper-card.component.css'
+  styleUrl: './wallpaper-card.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WallpaperCardComponent {
   @Input() wallpaper!: Wallpaper;

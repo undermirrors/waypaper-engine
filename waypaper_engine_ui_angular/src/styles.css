@@ -827,6 +827,21 @@ app-root {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    min-height: 0;
+}
+
+/* Router outlet container - essentiel pour le scroll */
+router-outlet {
+    display: none;
+}
+
+router-outlet + * {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .main-header {

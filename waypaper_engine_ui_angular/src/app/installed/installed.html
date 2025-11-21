@@ -12,7 +12,7 @@
 
   <div class="wallpaper-grid">
     <app-wallpaper-card
-      *ngFor="let wp of wallpapers"
+      *ngFor="let wp of wallpapers; trackBy: trackByWallpaperId"
       [wallpaper]="wp"
       (wallpaperClick)="onWallpaperClick($event)">
     </app-wallpaper-card>

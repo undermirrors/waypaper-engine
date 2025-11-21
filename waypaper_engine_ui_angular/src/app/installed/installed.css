@@ -6,3 +6,62 @@
   overflow: hidden;
 }
 
+.main-header {
+  flex-shrink: 0;
+}
+
+.wallpaper-grid {
+  flex: 1 1 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  align-content: start;
+}
+
+/* Scrollbar styling */
+.wallpaper-grid::-webkit-scrollbar {
+  width: 10px;
+}
+
+.wallpaper-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wallpaper-grid::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+  transition: background 0.2s ease;
+}
+
+.wallpaper-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--nav-selected);
+}
+
+/* Responsive grid */
+@media (max-width: 1200px) {
+  .wallpaper-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wallpaper-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wallpaper-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    padding: 16px;
+  }
+}
+

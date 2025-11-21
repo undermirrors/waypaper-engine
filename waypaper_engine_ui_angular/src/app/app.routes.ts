@@ -1,7 +1,4 @@
 import { Routes } from '@angular/router';
-import { InstalledComponent } from './installed/installed';
-import { ThemesComponent } from './themes/themes';
-import { SettingsComponent } from './settings/settings';
 
 export const routes: Routes = [
   {
@@ -11,17 +8,17 @@ export const routes: Routes = [
   },
   {
     path: 'installed',
-    component: InstalledComponent,
+    loadComponent: () => import('./installed/installed').then(m => m.InstalledComponent),
     title: 'Wallpapers installés'
   },
   {
     path: 'themes',
-    component: ThemesComponent,
+    loadComponent: () => import('./themes/themes').then(m => m.ThemesComponent),
     title: 'Thèmes'
   },
   {
     path: 'settings',
-    component: SettingsComponent,
+    loadComponent: () => import('./settings/settings').then(m => m.SettingsComponent),
     title: 'Paramètres'
   },
   {
