@@ -48,4 +48,3 @@ export class InstalledComponent implements OnInit {
     return wallpaper.id;
   }
 }
-

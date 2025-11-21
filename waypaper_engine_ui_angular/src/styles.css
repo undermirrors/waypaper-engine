@@ -330,7 +330,7 @@ app-root {
     pointer-events: none;
 }
 
-/* Styles pour les éléments de navigation */
+/* Navigation element styles */
 .preview-nav-item {
     width: 100%;
     height: 6px;
@@ -342,7 +342,7 @@ app-root {
     opacity: 1;
 }
 
-/* Styles pour la carte */
+/* Card styles */
 .preview-card-header {
     width: 100%;
     height: 8px;
@@ -356,14 +356,14 @@ app-root {
     opacity: 0.5;
 }
 
-/* Styles pour les indicateurs */
+/* Indicator styles */
 .preview-indicator {
     width: 8px;
     height: 8px;
     border-radius: 50%;
 }
 
-/* Classes de prévisualisation pour chaque thème */
+/* Theme preview classes */
 
 /* LIGHT THEME */
 .theme-preview-light .theme-preview-sidebar { background: #e2e8f0; }

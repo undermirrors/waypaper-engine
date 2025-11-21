@@ -22,7 +22,7 @@ export class ScreenService {
   }
 
   async loadScreens(): Promise<void> {
-    const screens = await this.tauriService.invoke<string[]>(APP_CONSTANTS.TAURI_COMMANDS.GET_SCREENS, {});
+    const screens = await this.tauriService.invoke<string[]>(APP_CONSTANTS.TAURI_COMMANDS.GET_SCREENS);
     this.screensSubject.next(screens);
 
     if (screens.length > 0 && !this.selectedScreenSubject.value) {

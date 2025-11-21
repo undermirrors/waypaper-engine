@@ -1,53 +1,36 @@
 .themes-page {
   width: 100%;
   height: 100%;
-  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--background);
 }
 
-.themes-header {
-  background: linear-gradient(135deg, var(--nav-selected) 0%, var(--accent) 100%);
-  padding: 48px 32px;
-  color: white;
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.empty-state {
+  text-align: center;
+  padding: 48px;
+  color: var(--text-secondary);
 }
 
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
+.empty-icon {
+  font-size: 96px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  opacity: 0.5;
 }
 
-.page-title {
-  font-size: 36px;
-  font-weight: 700;
-  margin: 0 0 12px 0;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.page-title i {
+.empty-state h2 {
   font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
 }
 
-.page-description {
+.empty-state p {
   font-size: 18px;
+  color: var(--text-secondary);
   margin: 0;
-  opacity: 0.95;
-  font-weight: 400;
-}
-
-.themes-container {
-  padding: 40px 32px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.themes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 32px;
 }
 
 .theme-card-large {

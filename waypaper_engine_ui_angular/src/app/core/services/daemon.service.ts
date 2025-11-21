@@ -6,11 +6,10 @@ import { APP_CONSTANTS } from '../constants/app.constants';
   providedIn: 'root'
 })
 export class DaemonService {
-
   constructor(private tauriService: TauriService) {}
 
   async stop(): Promise<void> {
-    await this.tauriService.invoke(APP_CONSTANTS.TAURI_COMMANDS.STOP_DAEMON, {});
+    await this.tauriService.invoke(APP_CONSTANTS.TAURI_COMMANDS.STOP_DAEMON);
   }
 }
 

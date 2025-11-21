@@ -9,17 +9,17 @@ export const routes: Routes = [
   {
     path: 'installed',
     loadComponent: () => import('./installed/installed').then(m => m.InstalledComponent),
-    title: 'Wallpapers installés'
+    title: 'Installed Wallpapers'
   },
   {
     path: 'themes',
     loadComponent: () => import('./themes/themes').then(m => m.ThemesComponent),
-    title: 'Thèmes'
+    title: 'Themes'
   },
   {
     path: 'settings',
     loadComponent: () => import('./settings/settings').then(m => m.SettingsComponent),
-    title: 'Paramètres'
+    title: 'Settings'
   },
   {
     path: '**',

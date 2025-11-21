@@ -21,7 +21,7 @@ export const THEMES: readonly Theme[] = [
   { id: 'theme-everforest', name: 'Everforest', className: 'theme-everforest', preview: '#a7c080' },
   { id: 'theme-palenight', name: 'Palenight', className: 'theme-palenight', preview: '#82aaff' },
   { id: 'theme-horizon', name: 'Horizon', className: 'theme-horizon', preview: '#fab795' },
-  { id: 'theme-forest', name: 'Forêt', className: 'theme-forest', preview: '#6b8e23' },
+  { id: 'theme-forest', name: 'Forest', className: 'theme-forest', preview: '#6b8e23' },
   { id: 'theme-sunset', name: 'Sunset', className: 'theme-sunset', preview: '#ff6b6b' },
   { id: 'theme-midnight-blue', name: 'Midnight Blue', className: 'theme-midnight-blue', preview: '#64ffda' },
   { id: 'theme-coral-reef', name: 'Coral Reef', className: 'theme-coral-reef', preview: '#ff6b9d' },

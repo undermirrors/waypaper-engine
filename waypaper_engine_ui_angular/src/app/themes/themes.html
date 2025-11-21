@@ -1,63 +1,8 @@
 <div class="themes-page">
-  <div class="themes-header">
-    <div class="header-content">
-      <h1 class="page-title">
-        <i class="fa-solid fa-palette"></i>
-        Personnalisation des thèmes
-      </h1>
-      <p class="page-description">
-        Choisissez le thème qui correspond à votre style et à votre environnement de travail
-      </p>
-    </div>
-  </div>
-
-  <div class="themes-container">
-    <div class="themes-grid">
-      <div
-        *ngFor="let theme of themes"
-        class="theme-card-large"
-        [class.active]="isActive(theme)"
-        (click)="selectTheme(theme)">
-
-        <div class="theme-preview-large" [ngClass]="theme.className">
-          <div class="preview-sidebar">
-            <div class="preview-nav-item active"></div>
-            <div class="preview-nav-item"></div>
-            <div class="preview-nav-item"></div>
-          </div>
-          <div class="preview-content">
-            <div class="preview-header"></div>
-            <div class="preview-cards">
-              <div class="preview-card"></div>
-              <div class="preview-card"></div>
-              <div class="preview-card"></div>
-              <div class="preview-card"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="theme-info">
-          <div class="theme-header">
-            <h3 class="theme-name">{{ theme.name }}</h3>
-            <div class="active-badge" *ngIf="isActive(theme)">
-              <i class="fa-solid fa-check"></i>
-              Actif
-            </div>
-          </div>
-
-          <div class="color-palette">
-            <div class="color-swatch" [style.backgroundColor]="theme.preview" [title]="'Couleur: ' + theme.preview"></div>
-          </div>
-        </div>
-
-        <div class="card-overlay" *ngIf="!isActive(theme)">
-          <div class="apply-button">
-            <i class="fa-solid fa-brush"></i>
-            Appliquer ce thème
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="empty-state">
+    <i class="fa-solid fa-compass empty-icon"></i>
+    <h2>Discover</h2>
+    <p>This feature will be implemented soon.</p>
   </div>
 </div>
 
