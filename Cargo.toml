@@ -5,5 +5,4 @@ members = [
     "waypaper_engine_cli",
     "waypaper_engine_ui_angular/src-tauri"
 ]
-default-members = ["waypaper_engine_ui_angular/src-tauri"]
 resolver = "2"
