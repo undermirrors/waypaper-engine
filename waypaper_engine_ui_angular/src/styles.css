@@ -845,7 +845,7 @@ router-outlet + * {
 }
 
 .main-header {
-    padding: 24px 32px;
+    padding: 12px 24px;
     background: var(--sidebar-bg);
     border-bottom: 1px solid var(--border-color);
     display: flex;
