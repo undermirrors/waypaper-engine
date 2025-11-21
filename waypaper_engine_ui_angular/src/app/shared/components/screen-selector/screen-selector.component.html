@@ -1,0 +1,16 @@
+<div class="screen-selector">
+  <label for="screen-select">
+    <i class="fas fa-desktop"></i>
+    Écran:
+  </label>
+  <select
+    id="screen-select"
+    [value]="selectedScreen"
+    (change)="onScreenChange($any($event.target).value)"
+    class="screen-select-input">
+    @for (screen of screens; track screen) {
+      <option [value]="screen">{{ screen }}</option>
+    }
+  </select>
+</div>
+

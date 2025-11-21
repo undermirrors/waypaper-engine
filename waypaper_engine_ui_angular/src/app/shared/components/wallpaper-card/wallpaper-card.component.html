@@ -1,0 +1,24 @@
+<div class="wallpaper-card" (click)="onCardClick()">
+  <div class="wallpaper-preview" [style.backgroundImage]="wallpaper.preview_b64 ? 'url(' + wallpaper.preview_b64 + ')' : (wallpaper.preview ? 'url(' + wallpaper.preview + ')' : 'none')">
+    @if (!wallpaper.preview_b64 && !wallpaper.preview) {
+      <div class="no-preview">
+        <i class="fas fa-image"></i>
+      </div>
+    } @else {
+      <div class="wallpaper-overlay">
+        <i class="fa-solid fa-play"></i>
+      </div>
+    }
+  </div>
+  <div class="wallpaper-info">
+    <h3 class="wallpaper-name">{{ wallpaper.title || wallpaper.name }}</h3>
+    @if (wallpaper.tags && wallpaper.tags.length > 0) {
+      <div class="wallpaper-tags">
+        @for (tag of wallpaper.tags; track tag) {
+          <span class="tag">{{ tag }}</span>
+        }
+      </div>
+    }
+  </div>
+</div>
+

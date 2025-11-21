@@ -1,0 +1,19 @@
+<div class="search-bar">
+  <i class="fas fa-search search-icon"></i>
+  <input
+    type="text"
+    [value]="value"
+    (input)="onSearchChange($any($event.target).value)"
+    [placeholder]="placeholder"
+    class="search-input" />
+  @if (value) {
+    <button
+      type="button"
+      (click)="clearSearch()"
+      class="clear-button"
+      aria-label="Effacer la recherche">
+      <i class="fas fa-times"></i>
+    </button>
+  }
+</div>
+

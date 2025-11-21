@@ -1,0 +1,27 @@
+@if (visible) {
+  <div class="theme-panel-overlay" (click)="onClose()">
+    <div class="theme-panel" (click)="$event.stopPropagation()">
+      <div class="theme-panel-header">
+        <h2>Choisir un thème</h2>
+        <button (click)="onClose()" class="close-button" aria-label="Fermer">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="theme-grid">
+        @for (theme of themes; track theme.id) {
+          <div
+            class="theme-card"
+            [class.active]="currentTheme?.id === theme.id"
+            (click)="onThemeSelect(theme)">
+            <div class="theme-preview" [style.background]="theme.preview"></div>
+            <div class="theme-name">{{ theme.name }}</div>
+            @if (currentTheme?.id === theme.id) {
+              <i class="fas fa-check theme-check"></i>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}
+

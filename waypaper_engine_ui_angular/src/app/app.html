@@ -28,13 +28,11 @@
         <div class="nav-section">
             <h3 class="section-title">Affichage</h3>
             <div class="control-group">
-                <label class="control-label">
-                    <i class="fa-solid fa-display"></i>
-                    Écran
-                </label>
-                <select class="modern-select" [(ngModel)]="selectedScreen" (change)="onScreenChange()">
-                    <option *ngFor="let screen of screens" [value]="screen">{{ screen }}</option>
-                </select>
+                <app-screen-selector
+                    [screens]="screens"
+                    [selectedScreen]="selectedScreen"
+                    (screenChange)="onScreenChange($event)">
+                </app-screen-selector>
             </div>
         </div>
 
@@ -83,36 +81,31 @@
 
     <main class="main-content">
         <div class="main-header">
-            <div class="search-container">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input
-                    class="search-input"
-                    type="text"
-                    placeholder="Rechercher un fond d'écran..."
-                    [(ngModel)]="search"
-                    (input)="onSearchChange()" />
-            </div>
+            <app-search-bar
+                [value]="search"
+                placeholder="Rechercher un fond d'écran..."
+                (searchChange)="onSearchChange($event)">
+            </app-search-bar>
             <div class="header-info">
                 <span class="wallpaper-count">{{ wallpapers.length }} fond(s) d'écran</span>
             </div>
         </div>
 
         <div class="wallpaper-grid">
-            <div
-                class="wallpaper-card"
+            <app-wallpaper-card
                 *ngFor="let wp of wallpapers"
-                [id]="wp.id"
-                (click)="onWallpaperClick(wp.id)">
-                <div class="wallpaper-preview" [style.backgroundImage]="'url(' + wp.preview_b64 + ')'">
-                    <div class="wallpaper-overlay">
-                        <i class="fa-solid fa-play"></i>
-                    </div>
-                </div>
-                <div class="wallpaper-info">
-                    <h3 class="wallpaper-title">{{ wp.title }}</h3>
-                </div>
-            </div>
+                [wallpaper]="wp"
+                (wallpaperClick)="onWallpaperClick($event)">
+            </app-wallpaper-card>
         </div>
     </main>
 </div>
+
+<app-theme-selector
+    [themes]="themes"
+    [currentTheme]="currentTheme"
+    [visible]="themePanelVisible"
+    (themeSelect)="selectTheme($event)"
+    (close)="themePanelVisible = false">
+</app-theme-selector>
 

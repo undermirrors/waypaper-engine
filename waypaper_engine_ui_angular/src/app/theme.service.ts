@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-
-export interface Theme {
-  id: string;
-  name: string;
-  className: string;
-  preview: string;
-}
+import { Theme } from './core/models/theme.model';
+import { StorageUtil } from './core/utils/storage.util';
+import { APP_CONSTANTS } from './core/constants/app.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -254,22 +250,17 @@ export class ThemeService {
     }
   ];
 
-  constructor() {
-    console.log('[ThemeService] Initialized with', this.themes.length, 'themes:', this.themes.map(t => t.name).join(', '));
-  }
-
   getThemes(): Theme[] {
     return [...this.themes];
   }
 
   applyTheme(theme: Theme) {
     document.documentElement.className = theme.className;
-    localStorage.setItem('theme', theme.className);
-    console.log('[ThemeService] Applied theme:', theme.name);
+    StorageUtil.set(APP_CONSTANTS.STORAGE_KEYS.THEME, theme.className);
   }
 
   getCurrentTheme(): Theme | undefined {
-    const savedTheme = localStorage.getItem('theme') || '';
+    const savedTheme = StorageUtil.get<string>(APP_CONSTANTS.STORAGE_KEYS.THEME, '');
     return this.themes.find(t => t.className === savedTheme) || this.themes[0];
   }
 }
