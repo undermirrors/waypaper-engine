@@ -10,17 +10,21 @@
         <div class="nav-section">
             <h3 class="section-title">Navigation</h3>
             <ul class="nav-menu">
-                <li class="nav-item selected">
+                <li class="nav-item" routerLink="/installed" routerLinkActive="selected">
                     <i class="fa-solid fa-download"></i>
                     <span>Installé</span>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" routerLink="/themes" routerLinkActive="selected">
                     <i class="fa-solid fa-compass"></i>
                     <span>Découvrir</span>
                 </li>
                 <li class="nav-item">
                     <i class="fa-solid fa-heart"></i>
                     <span>Favoris</span>
+                </li>
+                <li class="nav-item" routerLink="/settings" routerLinkActive="selected">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Paramètres</span>
                 </li>
             </ul>
         </div>
@@ -36,76 +40,14 @@
             </div>
         </div>
 
-        <div class="nav-section theme-section">
-            <h3 class="section-title">Thème</h3>
-            <div class="theme-grid">
-                <div
-                    class="theme-card"
-                    *ngFor="let t of themes"
-                    [class.active]="currentTheme?.id === t.id"
-                    (click)="selectTheme(t)"
-                    [title]="t.name">
-                    <div class="theme-preview" [ngClass]="'theme-preview-' + t.id">
-                        <div class="theme-preview-sidebar"></div>
-                        <div class="theme-preview-main"></div>
-                        <div class="theme-preview-nav">
-                            <div class="preview-nav-item"></div>
-                            <div class="preview-nav-item"></div>
-                            <div class="preview-nav-item selected"></div>
-                        </div>
-                        <div class="theme-preview-card">
-                            <div class="preview-card-header"></div>
-                            <div class="preview-card-content"></div>
-                        </div>
-                        <div class="theme-preview-border"></div>
-                        <div class="theme-preview-indicators">
-                            <div class="preview-indicator success"></div>
-                            <div class="preview-indicator danger"></div>
-                            <div class="preview-indicator accent"></div>
-                        </div>
-                    </div>
-                    <span>{{ t.name }}</span>
-                </div>
-            </div>
-        </div>
 
         <div class="sidebar-footer">
-            <button class="footer-btn" title="Paramètres">
-                <i class="fa-solid fa-gear"></i>
-            </button>
-            <button class="footer-btn danger" (click)="stopDaemon()" title="Arrêter le daemon">
-                <i class="fa-solid fa-power-off"></i>
-            </button>
         </div>
     </nav>
 
     <main class="main-content">
-        <div class="main-header">
-            <app-search-bar
-                [value]="search"
-                placeholder="Rechercher un fond d'écran..."
-                (searchChange)="onSearchChange($event)">
-            </app-search-bar>
-            <div class="header-info">
-                <span class="wallpaper-count">{{ wallpapers.length }} fond(s) d'écran</span>
-            </div>
-        </div>
-
-        <div class="wallpaper-grid">
-            <app-wallpaper-card
-                *ngFor="let wp of wallpapers"
-                [wallpaper]="wp"
-                (wallpaperClick)="onWallpaperClick($event)">
-            </app-wallpaper-card>
-        </div>
+        <router-outlet></router-outlet>
     </main>
 </div>
 
-<app-theme-selector
-    [themes]="themes"
-    [currentTheme]="currentTheme"
-    [visible]="themePanelVisible"
-    (themeSelect)="selectTheme($event)"
-    (close)="themePanelVisible = false">
-</app-theme-selector>
 

@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "identifier": "fr.flashonfire.waypaperengine",
   "build": {
-    "frontendDist": "../dist/waypaper_engine_ui_angular/browser"
+    "frontendDist": "../dist/waypaper_engine_ui_angular/browser",
+    "devUrl": "http://localhost:4200",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
   },
   "app": {
     "withGlobalTauri": true,

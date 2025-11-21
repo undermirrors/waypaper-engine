@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { InstalledComponent } from './installed/installed';
 import { ThemesComponent } from './themes/themes';
+import { SettingsComponent } from './settings/settings';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,11 @@ export const routes: Routes = [
     path: 'themes',
     component: ThemesComponent,
     title: 'Thèmes'
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent,
+    title: 'Paramètres'
   },
   {
     path: '**',

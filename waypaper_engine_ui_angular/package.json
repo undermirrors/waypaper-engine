@@ -7,7 +7,10 @@
     "build": "ng build",
     "dev": "ng serve",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
   },
   "prettier": {
     "printWidth": 100,

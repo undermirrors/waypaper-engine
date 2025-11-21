@@ -1,0 +1,118 @@
+<div class="settings-page">
+  <div class="settings-header">
+    <h1><i class="fa-solid fa-gear"></i> Paramètres</h1>
+    <p>Configurez votre expérience Waypaper Engine</p>
+  </div>
+
+  <div class="settings-content">
+    <!-- Section Thème -->
+    <section class="settings-section">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-palette"></i> Thème de l'application</h2>
+        <p>Personnalisez l'apparence de l'interface</p>
+      </div>
+
+      <div class="theme-grid">
+        <div
+          class="theme-card"
+          *ngFor="let t of themes"
+          [class.active]="currentTheme?.id === t.id"
+          (click)="selectTheme(t)">
+          <div class="theme-preview" [ngClass]="'theme-preview-' + t.id">
+            <div class="theme-preview-sidebar"></div>
+            <div class="theme-preview-main"></div>
+            <div class="theme-preview-nav">
+              <div class="preview-nav-item"></div>
+              <div class="preview-nav-item"></div>
+              <div class="preview-nav-item selected"></div>
+            </div>
+            <div class="theme-preview-card">
+              <div class="preview-card-header"></div>
+              <div class="preview-card-content"></div>
+            </div>
+            <div class="theme-preview-border"></div>
+            <div class="theme-preview-indicators">
+              <div class="preview-indicator success"></div>
+              <div class="preview-indicator danger"></div>
+              <div class="preview-indicator accent"></div>
+            </div>
+          </div>
+          <div class="theme-info">
+            <span class="theme-name">{{ t.name }}</span>
+            <i class="fa-solid fa-check check-icon" *ngIf="currentTheme?.id === t.id"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Application -->
+    <section class="settings-section">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-sliders"></i> Application</h2>
+        <p>Gérez l'application et le daemon</p>
+      </div>
+
+      <div class="settings-group">
+        <div class="setting-item">
+          <div class="setting-label">
+            <i class="fa-solid fa-info-circle"></i>
+            <div>
+              <h3>Version</h3>
+              <p>Version de Waypaper Engine</p>
+            </div>
+          </div>
+          <div class="setting-value">
+            <span class="version-badge">v1.0.0</span>
+          </div>
+        </div>
+
+        <div class="setting-item danger-zone">
+          <div class="setting-label">
+            <i class="fa-solid fa-power-off"></i>
+            <div>
+              <h3>Arrêter le daemon</h3>
+              <p>Arrête le processus en arrière-plan</p>
+            </div>
+          </div>
+          <div class="setting-value">
+            <button class="btn-danger" (click)="stopDaemon()">
+              <i class="fa-solid fa-power-off"></i>
+              Arrêter
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section class="settings-section">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-circle-info"></i> À propos</h2>
+        <p>Informations sur l'application</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-logo">
+          <i class="fa-solid fa-image"></i>
+        </div>
+        <h3>Waypaper Engine</h3>
+        <p>Un gestionnaire de fonds d'écran animés pour Wayland</p>
+        <div class="about-links">
+          <a href="#" class="link-btn" title="Documentation">
+            <i class="fa-solid fa-book"></i>
+            Documentation
+          </a>
+          <a href="#" class="link-btn" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+          <a href="#" class="link-btn" title="Rapport de bug">
+            <i class="fa-solid fa-bug"></i>
+            Rapport de bug
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
