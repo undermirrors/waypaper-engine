@@ -30,6 +30,10 @@
             "styles": [
               "src/styles.css",
               "src/themes.css",
+              "src/app/app.css",
+              "src/app/themes/themes.css",
+              "src/app/settings/settings.css",
+              "src/app/installed/installed.css",
               "src/assets/fontawesome/css/fontawesome.css",
               "src/assets/fontawesome/css/solid.css"
             ]
@@ -76,7 +80,6 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "index": "src/index.html",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -92,6 +95,10 @@
             "styles": [
               "src/styles.css",
               "src/themes.css",
+              "src/app/app.css",
+              "src/app/themes/themes.css",
+              "src/app/settings/settings.css",
+              "src/app/installed/installed.css",
               "src/assets/fontawesome/css/fontawesome.css",
               "src/assets/fontawesome/css/solid.css"
             ]
