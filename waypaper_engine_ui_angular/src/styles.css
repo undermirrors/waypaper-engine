@@ -72,8 +72,10 @@ app-root {
     color: var(--nav-selected);
 }
 
-.app-logo i {
-    font-size: 28px;
+.app-logo .logo-image {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
 .nav-section {
